@@ -7,7 +7,10 @@ const SideMenu: Component = () => {
   const menus = components ? components?.children?.filter((c) => c.meta?.visible) : [];
   return (
     <div w-200px h-100vh overflow-hidden border="~ r-1px solid #e6e5e5" box-border p-12px>
-      <A href="/" class="decoration-none text-inherit px-8px h-48px mb-2 flex items-center font-bold">
+      <A
+        href="/"
+        class="decoration-none text-inherit px-8px h-48px mb-2 flex items-center font-bold 
+        cursor-pointer">
         solid-ui-materials
       </A>
       <For each={menus}>
