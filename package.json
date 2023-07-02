@@ -1,0 +1,52 @@
+{
+  "name": "solid-ui-material",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "serve": "vite preview",
+    "prepare": "husky install"
+  },
+  "license": "MIT",
+  "lint-staged": {
+    "src/**/*.{jsx,tsx,ts,js,json}": [
+      "eslint --config .eslintrc.js"
+    ],
+    "*.{css,sass,scss}": [
+      "stylelint --fix",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^17.6.6",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "autoprefixer": "^10.4.14",
+    "commitlint": "^17.6.6",
+    "eslint": "^8.43.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-solid": "^0.12.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8",
+    "sass": "^1.63.6",
+    "stylelint": "^15.9.0",
+    "stylelint-config-standard": "^33.0.0",
+    "stylelint-config-standard-scss": "^9.0.0",
+    "stylelint-scss": "^5.0.1",
+    "typescript": "^5.1.5",
+    "vite": "^4.3.9",
+    "vite-plugin-solid": "^2.7.0"
+  },
+  "dependencies": {
+    "@solidjs/router": "^0.8.2",
+    "solid-js": "^1.7.7"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "iOS 7",
+    "last 3 iOS versions"
+  ]
+}
