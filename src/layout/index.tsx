@@ -6,7 +6,6 @@ import style from './index.module.scss';
 
 const Layout: Component = () => {
   const Route = useRoutes(routes as RouteDefinition[]);
-  console.log(routes);
 
   return (
     <div class={style.layout}>
