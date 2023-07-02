@@ -1,0 +1,11 @@
+.s-icon {
+  line-height: 1em;
+  position: relative;
+  color: var(--color, inherit);
+  font-size: var(--size, inherit);
+  &__gradient {
+    color: transparent !important;
+    background-image: var(--gradient);
+    background-clip: text;
+  }
+}

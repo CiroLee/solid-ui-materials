@@ -1,8 +1,19 @@
 $width: 200px;
+$radius: 4px;
 
 .side-menu {
   width: $width;
   height: 100vh;
   overflow: hidden;
   border-right: 1px solid #e6e5e5;
+  box-sizing: border-box;
+  padding: 12px;
+  transition: background-color 0.2s ease;
+  li {
+    height: 32px;
+    display: flex;
+    background: red;
+    border-radius: $radius;
+    list-style: none;
+  }
 }

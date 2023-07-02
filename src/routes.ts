@@ -1,15 +1,40 @@
 import { lazy } from 'solid-js';
 import { type RouteDefinition } from '@solidjs/router';
-
-const routes: RouteDefinition[] = [
+type RouteConfig = Omit<RouteDefinition, 'children'> & {
+  children?: RouteConfig[];
+  meta?: {
+    icon?: string;
+    key: string;
+    name: string;
+    visible?: boolean;
+  };
+};
+const routes: RouteConfig[] = [
   {
     path: '/',
-    component: lazy(() => import('./pages/home')),
+    children: [
+      {
+        path: '/',
+        component: lazy(() => import('./pages/home')),
+      },
+    ],
   },
   {
-    path: '/about',
-    component: lazy(() => import('./pages/about')),
+    path: '/components',
+    children: [
+      {
+        path: 'icon',
+        component: lazy(() => import('./pages/icon-page')),
+        meta: {
+          name: 'Icon',
+          key: 'icon',
+          icon: 'sparkling-line',
+          visible: true,
+        },
+      },
+    ],
   },
+
   {
     path: '**',
     component: lazy(() => import('./pages/404')),

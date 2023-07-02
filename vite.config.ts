@@ -2,8 +2,10 @@ import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 import autoprefixer from 'autoprefixer';
 import path from 'path';
+import Unocss from 'unocss/vite';
 export default defineConfig({
-  plugins: [solidPlugin()],
+  base: '/solid-ui-materials/',
+  plugins: [solidPlugin(), Unocss()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

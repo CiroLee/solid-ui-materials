@@ -22,5 +22,7 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['solid'],
-  rules: {},
+  rules: {
+    'max-len': ['error', { code: 120 }],
+  },
 };

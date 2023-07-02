@@ -2,6 +2,8 @@
 import { render } from 'solid-js/web';
 import { Router, hashIntegration } from '@solidjs/router';
 import Layout from './layout';
+import 'virtual:uno.css';
+import 'remixicon/fonts/remixicon.css';
 import './styles/global.scss';
 
 const root = document.getElementById('root') as HTMLElement;

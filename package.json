@@ -22,6 +22,8 @@
     "@commitlint/config-conventional": "^17.6.6",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
+    "@unocss/preset-attributify": "^0.53.4",
+    "@unocss/transformer-variant-group": "^0.53.4",
     "autoprefixer": "^10.4.14",
     "commitlint": "^17.6.6",
     "eslint": "^8.43.0",
@@ -36,11 +38,13 @@
     "stylelint-config-standard-scss": "^9.0.0",
     "stylelint-scss": "^5.0.1",
     "typescript": "^5.1.5",
+    "unocss": "^0.53.4",
     "vite": "^4.3.9",
     "vite-plugin-solid": "^2.7.0"
   },
   "dependencies": {
     "@solidjs/router": "^0.8.2",
+    "remixicon": "^3.4.0",
     "solid-js": "^1.7.7"
   },
   "browserslist": [
