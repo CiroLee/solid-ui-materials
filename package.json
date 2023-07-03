@@ -40,10 +40,13 @@
     "typescript": "^5.1.5",
     "unocss": "^0.53.4",
     "vite": "^4.3.9",
+    "vite-plugin-markdown": "^2.1.0",
     "vite-plugin-solid": "^2.7.0"
   },
   "dependencies": {
     "@solidjs/router": "^0.8.2",
+    "highlight.js": "^11.8.0",
+    "markdown-it": "^13.0.1",
     "remixicon": "^3.4.0",
     "solid-js": "^1.7.7"
   },

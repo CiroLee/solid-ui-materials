@@ -6,7 +6,7 @@ const SideMenu: Component = () => {
   const components = routes.find((r) => r.path === '/components');
   const menus = components ? components?.children?.filter((c) => c.meta?.visible) : [];
   return (
-    <div w-200px h-100vh overflow-hidden border="~ r-1px solid #e6e5e5" box-border p-12px>
+    <div min-w-200px w-200px h-100vh overflow-hidden border="~ r-1px solid #e6e5e5" box-border p-12px>
       <A
         href="/"
         class="decoration-none text-inherit px-8px h-48px mb-2 flex items-center font-bold 

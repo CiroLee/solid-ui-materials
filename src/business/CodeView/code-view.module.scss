@@ -1,0 +1,19 @@
+.code-view {
+  max-width: 76%;
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 14px;
+  margin: 12px 0;
+  position: relative;
+  background-color: #2a272b;
+  padding: 12px;
+  pre {
+    margin: 0;
+    background-color: inherit;
+    overflow-x: auto;
+    & ::selection {
+      background-color: rgb(87 166 250);
+      color: #fff;
+    }
+  }
+}

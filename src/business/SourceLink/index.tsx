@@ -1,5 +1,5 @@
 import { type Component } from 'solid-js';
-import SIcon from '../SIcon';
+import SIcon from '@/components/SIcon';
 interface SourceLinkProps {
   path: string;
   name?: string;
