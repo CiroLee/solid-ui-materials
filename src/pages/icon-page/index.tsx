@@ -1,13 +1,34 @@
+import { createSignal } from 'solid-js';
+import CodeDrawer from '@/business/CodeDrawer';
 import SIcon from '@/components/SIcon';
 import SourceLink from '@/business/SourceLink';
 import CodeView from '@/business/CodeView';
 import { html as iconSizeFStr } from './docs/icon-size.md';
 import { html as iconColorFStr } from './docs/icon-color.md';
 export default function SIconPage() {
+  const tabs = [
+    {
+      name: 'tsx',
+      path: 'components/SIcon/index.tsx',
+    },
+    {
+      name: 'scss',
+      path: 'components/SIcon/index.scss',
+    },
+  ];
+  const [showCodeDrawer, setShowCodeDrawer] = createSignal(false);
   return (
     <div>
       <div>
-        <h3>SIcon图标</h3>
+        <div flex items-center justify-between>
+          <h3>SIcon图标</h3>
+          <div>
+            <span hover:text-blue-600 text-gray cursor-pointer mr-4 onClick={() => setShowCodeDrawer(true)}>
+              code
+            </span>
+            <SourceLink path="SIcon" name="source" />
+          </div>
+        </div>
         <span text-sub>SIcon based on</span>
         <a text-14px text-blue-600 ml-1 href="https://github.com/Remix-Design/RemixIcon" target="-blank">
           Remixicon
@@ -27,9 +48,7 @@ export default function SIconPage() {
         </div>
         <CodeView html={iconColorFStr} />
       </div>
-      <footer mt-12>
-        <SourceLink path="SIcon" />
-      </footer>
+      <CodeDrawer show={showCodeDrawer()} tabs={tabs} onCancel={() => setShowCodeDrawer(false)} />
     </div>
   );
 }

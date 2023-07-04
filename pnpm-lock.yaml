@@ -4,6 +4,9 @@ dependencies:
   '@solidjs/router':
     specifier: ^0.8.2
     version: 0.8.2(solid-js@1.7.7)
+  fe-gear:
+    specifier: ^1.0.5
+    version: 1.0.5
   highlight.js:
     specifier: ^11.8.0
     version: 11.8.0
@@ -2350,6 +2353,10 @@ packages:
     dependencies:
       reusify: 1.0.4
     dev: true
+
+  /fe-gear@1.0.5:
+    resolution: {integrity: sha512-U43FXjMA6sgP/2U2raRuIuVxbu7st5utv0C27Urun1+/SGv60gWcm+OSsl1lq/JVu4tKoQVRz+aX+JOFxsQC7w==}
+    dev: false
 
   /file-entry-cache@6.0.1:
     resolution: {integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==}

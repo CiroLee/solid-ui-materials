@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "@solidjs/router": "^0.8.2",
+    "fe-gear": "^1.0.5",
     "highlight.js": "^11.8.0",
     "markdown-it": "^13.0.1",
     "remixicon": "^3.4.0",
