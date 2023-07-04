@@ -2,14 +2,17 @@ import { type Component, For, Show } from 'solid-js';
 import SIcon from '@/components/SIcon';
 import { A } from '@solidjs/router';
 import routes from '@/routes';
-const SideMenu: Component = () => {
+interface SideMenuProps {
+  class?: string;
+}
+const SideMenu: Component<SideMenuProps> = (props) => {
   const components = routes.find((r) => r.path === '/components');
   const menus = components ? components?.children?.filter((c) => c.meta?.visible) : [];
   return (
-    <div min-w-200px w-200px h-100vh overflow-hidden border="~ r-1px solid #e6e5e5" box-border p-12px>
+    <div class={props.class} w-200px h-100vh overflow-hidden border="~ r-1px solid #e6e5e5" box-border p-12px>
       <A
         href="/"
-        class="decoration-none text-inherit px-8px h-48px mb-2 flex items-center font-bold 
+        class="decoration-none text-inherit px-8px h-44px mb-2 flex items-center font-bold 
         cursor-pointer">
         solid-ui-materials
       </A>

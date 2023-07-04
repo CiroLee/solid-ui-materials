@@ -1,15 +1,15 @@
 import SIcon from '@/components/SIcon';
 import SourceLink from '@/business/SourceLink';
 import CodeView from '@/business/CodeView';
-import { html as iconSizeFStr } from './icon-size.md';
-import { html as iconColorFStr } from './icon-color.md';
+import { html as iconSizeFStr } from './docs/icon-size.md';
+import { html as iconColorFStr } from './docs/icon-color.md';
 export default function SIconPage() {
   return (
     <div>
       <div>
         <h3>SIcon图标</h3>
-        SIcon based on
-        <a text-14px text-blue ml-1 href="https://github.com/Remix-Design/RemixIcon" target="-blank">
+        <span text-sub>SIcon based on</span>
+        <a text-14px text-blue-600 ml-1 href="https://github.com/Remix-Design/RemixIcon" target="-blank">
           Remixicon
         </a>
         <h4>图标尺寸</h4>

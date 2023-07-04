@@ -7,9 +7,9 @@ const Layout: Component = () => {
   const Route = useRoutes(routes as RouteDefinition[]);
 
   return (
-    <div flex>
-      <SideMenu />
-      <main flex-1 p-16px>
+    <div h-100vh flex overflow-hidden>
+      <SideMenu class="flex-shrink-0" />
+      <main flex-1 p-16px box-border overflow-auto>
         <Route />
       </main>
     </div>

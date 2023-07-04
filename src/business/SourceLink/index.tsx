@@ -10,7 +10,7 @@ const SourceLink: Component<SourceLinkProps> = (props) => {
       decoration-none
       text-gray
       relative
-      hover:text-blue
+      hover:text-blue-600
       href={`https://github.com/CiroLee/solid-ui-materials/tree/main/src/components/${props.path}`}
       target="_blank">
       <span>{props.name || 'Source'}</span>
