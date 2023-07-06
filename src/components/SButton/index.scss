@@ -33,12 +33,10 @@ $large-height: 48px;
   border: 0;
   background-color: $bg;
   color: #fff;
-
-  &:active:not(:disabled) {
+  &:active:not(:disabled, .s-button--loading) {
     background-color: $active-bg;
   }
-
-  &:hover:not(:disabled, :active) {
+  &:hover:not(:disabled, :active, .s-button--loading) {
     background-color: $hover-bg;
   }
 }
@@ -58,11 +56,12 @@ $large-height: 48px;
   transition-duration: $trans-duration;
   transition-timing-function: linear;
   cursor: pointer;
-
+  &--loading {
+    cursor: default;
+  }
   &:where(:focus-visible) {
     box-shadow: 0 0 0 3px $focus-outline-color;
   }
-
   &:disabled {
     outline: 0;
     border: 0;
@@ -70,11 +69,9 @@ $large-height: 48px;
     background-color: $disabled-bg !important;
     cursor: not-allowed;
   }
-
   &.round {
     border-radius: calc($medium-height / 2);
   }
-
   &.circle {
     padding: 0;
     width: $medium-height;
@@ -83,16 +80,13 @@ $large-height: 48px;
   }
 }
 
-// button type
 .s-button--default[class] {
   border: 1px solid $default-border-color;
-
-  &:active:not(:disabled) {
+  &:active:not(:disabled, .s-button--loading) {
     border-color: $primary-color-600;
     color: $primary-color-600;
   }
-
-  &:hover:not(:disabled, :active) {
+  &:hover:not(:disabled, :active, .s-button--loading) {
     border-color: $primary-color-400;
     color: $primary-color-400;
   }
@@ -100,12 +94,10 @@ $large-height: 48px;
 
 .s-button--text[class] {
   border: 0;
-
-  &:active:not(:disabled) {
+  &:active:not(:disabled, .s-button--loading) {
     background-color: $text-active-bg-color;
   }
-
-  &:hover:not(:disabled, :active) {
+  &:hover:not(:disabled, :active, .s-button--loading) {
     background-color: $text-hover-bg-color;
   }
 }
@@ -126,16 +118,13 @@ $large-height: 48px;
   @include s-button($danger-color-500, $danger-color-600, $danger-color-400);
 }
 
-// button size & shape
 .s-button--small {
   height: $small-height;
   padding: 0 $small-padding-x;
   font-size: 14px;
-
   &.round {
     border-radius: calc($small-height / 2);
   }
-
   &.circle {
     width: $small-height;
     height: $small-height;
@@ -146,11 +135,9 @@ $large-height: 48px;
 .s-button--large {
   height: $large-height;
   padding: 0 $large-padding-x;
-
   &.round {
     border-radius: calc($large-height / 2);
   }
-
   &.circle {
     width: $large-height;
     height: $large-height;

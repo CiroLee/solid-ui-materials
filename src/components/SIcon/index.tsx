@@ -15,7 +15,7 @@ const SIcon: Component<SIconProps> = (props) => {
   };
   return (
     <i
-      class={`s-icon ri-${props.name} ${props.class}`}
+      class={`s-icon ri-${props.name} ${props.class || ''}`.replace(/\s{2,}/g, ' ').trim()}
       classList={{ 's-icon__gradient': !!props.gradient }}
       style={{ '--color': props.color, '--size': props.size, '--gradient': props.gradient }}
       onClick={onClickHandler}
