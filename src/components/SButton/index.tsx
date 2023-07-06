@@ -10,8 +10,12 @@ interface SButtonProps {
   block?: boolean;
   loading?: boolean;
   children?: JSX.Element;
+  onClick?: () => void;
 }
 const SButton: Component<SButtonProps> = (props) => {
+  const onClickHandler = () => {
+    props.onClick && props.onClick();
+  };
   return (
     <button
       tabindex="0"
@@ -22,7 +26,8 @@ const SButton: Component<SButtonProps> = (props) => {
         props.block ? 'block' : ''
       } ${props.class || ''}`
         .replace(/\s{2,}/g, ' ')
-        .trim()}>
+        .trim()}
+      onClick={onClickHandler}>
       {props.children}
     </button>
   );
