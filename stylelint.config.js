@@ -10,7 +10,7 @@ module.exports = {
     'rule-empty-line-before': [
       'always',
       {
-        except: ['inside-block'],
+        except: ['after-single-line-comment'],
       },
     ],
     'selector-pseudo-class-no-unknown': [true, { ignorePseudoClasses: ['global'] }],

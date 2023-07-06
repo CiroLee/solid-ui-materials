@@ -1,5 +1,5 @@
 import { type Component, For, createResource, createEffect, createSignal } from 'solid-js';
-import Popup from '@/components/Popup';
+import SPopup from '@/components/SPopup';
 import SIcon from '@/components/SIcon';
 import { copyToClipboard } from '@/utils/utils';
 import { fetchCodesFromGithub, type GithubContent } from '@/api/github';
@@ -42,7 +42,7 @@ const CodeDrawer: Component<CodeDrawerProps> = (props) => {
   });
 
   return (
-    <Popup show={props.show} maskClosable placement="right" onCancel={props.onCancel}>
+    <SPopup show={props.show} maskClosable placement="right" onCancel={props.onCancel}>
       <div flex flex-col w-440px h-full bg-white p-12px overflow-hidden box-border>
         <div flex>
           <For each={codeData()}>
@@ -83,7 +83,7 @@ const CodeDrawer: Component<CodeDrawerProps> = (props) => {
           </pre>
         </div>
       </div>
-    </Popup>
+    </SPopup>
   );
 };
 

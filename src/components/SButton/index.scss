@@ -1,0 +1,163 @@
+// color variables
+$primary-color-400: #a976f9;
+$primary-color-500: #8749f6;
+$primary-color-600: #6735d2;
+$success-color-400: #99ef3e;
+$success-color-500: #6be503;
+$success-color-600: #51c402;
+$warn-color-400: #fecb70;
+$warn-color-500: #ffb343;
+$warn-color-600: #db8f31;
+$danger-color-400: #fb7d71;
+$danger-color-500: #f94141;
+$danger-color-600: #d72f3e;
+
+// attribute variables
+$default-border-color: #dbdbdb;
+$text-hover-bg-color: #ededed;
+$text-active-bg-color: #d9d9d9;
+$border-radius: 4px;
+$trans-duration: 0.15s;
+$disabled-color: #bababa;
+$disabled-bg: #ebebeb;
+$focus-outline-color: #82bdf5;
+$small-padding-x: 16px;
+$medium-padding-x: 20px;
+$large-padding-x: 24px;
+$small-height: 32px;
+$medium-height: 40px;
+$large-height: 48px;
+
+// scss mixin
+@mixin s-button($bg, $active-bg, $hover-bg) {
+  border: 0;
+  background-color: $bg;
+  color: #fff;
+
+  &:active:not(:disabled) {
+    background-color: $active-bg;
+  }
+
+  &:hover:not(:disabled, :active) {
+    background-color: $hover-bg;
+  }
+}
+
+.s-button {
+  height: 40px;
+  outline: 0;
+  border: 0;
+  padding: 0 $medium-padding-x;
+  border-radius: $border-radius;
+  background-color: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  transition-property: border-color, background-color, color;
+  transition-duration: $trans-duration;
+  transition-timing-function: linear;
+  cursor: pointer;
+
+  &:where(:focus-visible) {
+    box-shadow: 0 0 0 3px $focus-outline-color;
+  }
+
+  &:disabled {
+    outline: 0;
+    border: 0;
+    color: $disabled-color !important;
+    background-color: $disabled-bg !important;
+    cursor: not-allowed;
+  }
+
+  &.round {
+    border-radius: calc($medium-height / 2);
+  }
+
+  &.circle {
+    padding: 0;
+    width: $medium-height;
+    height: $medium-height;
+    border-radius: 50%;
+  }
+}
+
+// button type
+.s-button--default[class] {
+  border: 1px solid $default-border-color;
+
+  &:active:not(:disabled) {
+    border-color: $primary-color-600;
+    color: $primary-color-600;
+  }
+
+  &:hover:not(:disabled, :active) {
+    border-color: $primary-color-400;
+    color: $primary-color-400;
+  }
+}
+
+.s-button--text[class] {
+  border: 0;
+
+  &:active:not(:disabled) {
+    background-color: $text-active-bg-color;
+  }
+
+  &:hover:not(:disabled, :active) {
+    background-color: $text-hover-bg-color;
+  }
+}
+
+.s-button--primary[class] {
+  @include s-button($primary-color-500, $primary-color-600, $primary-color-400);
+}
+
+.s-button--success[class] {
+  @include s-button($success-color-500, $success-color-600, $success-color-400);
+}
+
+.s-button--warn[class] {
+  @include s-button($warn-color-500, $warn-color-600, $warn-color-400);
+}
+
+.s-button--danger[class] {
+  @include s-button($danger-color-500, $danger-color-600, $danger-color-400);
+}
+
+// button size & shape
+.s-button--small {
+  height: $small-height;
+  padding: 0 $small-padding-x;
+  font-size: 14px;
+
+  &.round {
+    border-radius: calc($small-height / 2);
+  }
+
+  &.circle {
+    width: $small-height;
+    height: $small-height;
+    border-radius: 50%;
+  }
+}
+
+.s-button--large {
+  height: $large-height;
+  padding: 0 $large-padding-x;
+
+  &.round {
+    border-radius: calc($large-height / 2);
+  }
+
+  &.circle {
+    width: $large-height;
+    height: $large-height;
+    border-radius: 50%;
+  }
+}
+
+.s-button.block {
+  width: 100%;
+}

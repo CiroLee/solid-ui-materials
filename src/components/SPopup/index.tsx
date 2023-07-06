@@ -1,5 +1,4 @@
 import { type Component, type JSX, createSignal, createEffect, Show, onCleanup } from 'solid-js';
-
 import './index.scss';
 
 interface PopupProps {
@@ -9,7 +8,7 @@ interface PopupProps {
   placement?: 'top' | 'bottom' | 'left' | 'right' | 'center';
   onCancel?: () => void;
 }
-const Popup: Component<PopupProps> = (props) => {
+const SPopup: Component<PopupProps> = (props) => {
   let maskRef: HTMLDivElement | undefined;
   let contentRef: HTMLDivElement | undefined;
   const [visibleAni, setVisibleAni] = createSignal(false);
@@ -67,4 +66,4 @@ const Popup: Component<PopupProps> = (props) => {
   );
 };
 
-export default Popup;
+export default SPopup;

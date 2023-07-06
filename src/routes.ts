@@ -12,12 +12,7 @@ type RouteConfig = Omit<RouteDefinition, 'children'> & {
 const routes: RouteConfig[] = [
   {
     path: '/',
-    children: [
-      {
-        path: '/',
-        component: lazy(() => import('./pages/home')),
-      },
-    ],
+    component: lazy(() => import('./pages/home')),
   },
   {
     path: '/components',
@@ -28,7 +23,15 @@ const routes: RouteConfig[] = [
         meta: {
           name: 'Icon',
           key: 'icon',
-          icon: 'sparkling-line',
+          visible: true,
+        },
+      },
+      {
+        path: 'button',
+        component: lazy(() => import('./pages/button-page')),
+        meta: {
+          name: 'Button',
+          key: 'button',
           visible: true,
         },
       },
