@@ -1,0 +1,143 @@
+/* stylelint-disable no-descending-specificity */
+
+// color variables
+$primary-color-500: #8749f6;
+$primary-color-200: #d7b6fd;
+$warn-color-500: #ffb343;
+$warn-color-200: #fee9b2;
+$error-color-500: #f94141;
+$error-color-200: #ffc6b3;
+
+// attribute variables
+$default-border-color: #dbdbdb;
+$placeholder-color: #bababa;
+$disabled-color: #bababa;
+$disabled-bg-color: #f0f0f0;
+$fix-icon-size: 18px;
+$fix-color: #c2c2c2;
+$trans-duration: 0.15s;
+$small-height: 32px;
+$medium-height: 40px;
+$large-height: 48px;
+$border-radius: 4px;
+$padding-x: 12px;
+
+.s-input {
+  position: relative;
+  box-sizing: border-box;
+  input {
+    border: 1px solid $default-border-color;
+    border-radius: $border-radius;
+    outline: 0;
+    padding: 0 $padding-x;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    box-sizing: border-box;
+    transition: all $trans-duration linear;
+    &::placeholder {
+      color: $placeholder-color;
+    }
+    &:not(:disabled, :read-only):where(:focus, :focus-within, :focus-visible) {
+      border-color: $primary-color-500;
+      box-shadow: 0 0 0 2px $primary-color-200;
+    }
+    &:not(:disabled, :read-only):hover {
+      border-color: $primary-color-500;
+    }
+    &:disabled {
+      color: $disabled-color;
+      border-color: $default-border-color;
+      background-color: $disabled-bg-color;
+      cursor: not-allowed;
+    }
+
+    // with prefix and suffix
+    &:nth-child(2) {
+      // special for only icon prefix
+      padding-left: calc($padding-x + $fix-icon-size + 2px);
+    }
+    &:not(:first-child, :last-child) {
+      // special for both prefix icon and suffix icon
+      padding-left: calc($padding-x + $fix-icon-size + 2px);
+      padding-right: calc($padding-x + $fix-icon-size + 8px);
+    }
+    &:nth-child(1):not(:only-child) {
+      // special for only icon suffix
+      padding-right: calc($padding-x + max($fix-icon-size, var(--count-width)) + 8px);
+    }
+  }
+  &__prefix,
+  &__suffix {
+    position: absolute;
+    top: 50%;
+    font-size: $fix-icon-size;
+    transform: translateY(-50%);
+  }
+  &__prefix {
+    left: calc($padding-x - 2px);
+  }
+  &__suffix {
+    right: calc($padding-x - 2px);
+  }
+  &__clear {
+    color: $fix-color;
+    cursor: pointer;
+    font-size: $fix-icon-size;
+  }
+  &__count {
+    width: var(--count-width, auto);
+    text-align: right;
+    color: $fix-color;
+    font-size: 0.9em;
+  }
+}
+
+.s-input--warn {
+  .s-input__prefix,
+  .s-input__suffix {
+    color: $warn-color-500;
+  }
+  input {
+    border-color: $warn-color-500;
+    &:not(:disabled, :read-only):where(:focus, :focus-within, :focus-visible) {
+      box-shadow: 0 0 0 2px $warn-color-200;
+    }
+    &:not(:disabled, :read-only):hover {
+      border-color: $warn-color-500;
+    }
+  }
+}
+
+.s-input--error {
+  .s-input__prefix,
+  .s-input__suffix {
+    color: $error-color-500;
+  }
+  input {
+    border-color: $error-color-500;
+    &:not(:disabled, :read-only):where(:focus, :focus-within, :focus-visible) {
+      box-shadow: 0 0 0 2px $error-color-200;
+    }
+    &:not(:disabled, :read-only):hover {
+      border-color: $error-color-500;
+    }
+  }
+}
+
+.s-input--small {
+  height: $small-height;
+}
+
+.s-input--medium {
+  height: $medium-height;
+}
+
+.s-input--large {
+  height: $large-height;
+  font-size: 16px;
+  & input::placeholder {
+    font-size: 16px;
+  }
+}

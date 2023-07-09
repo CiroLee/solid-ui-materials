@@ -1,7 +1,7 @@
 /* eslint-disable solid/no-innerhtml */
 import { type Component } from 'solid-js';
 import style from './code-view.module.scss';
-import 'highlight.js/styles/felipec.css';
+import 'highlight.js/styles/atom-one-dark.css';
 interface CodeViewProps {
   html: string;
 }

@@ -1,7 +1,8 @@
 import { type Component } from 'solid-js';
 import './index.scss';
 interface SIconProps {
-  name?: string;
+  name: string;
+  title?: string;
   color?: string;
   size?: string;
   class?: string;
@@ -15,6 +16,7 @@ const SIcon: Component<SIconProps> = (props) => {
   };
   return (
     <i
+      title={props.title || ''}
       class={`s-icon ri-${props.name} ${props.class || ''}`.replace(/\s{2,}/g, ' ').trim()}
       classList={{ 's-icon__gradient': !!props.gradient }}
       style={{ '--color': props.color, '--size': props.size, '--gradient': props.gradient }}

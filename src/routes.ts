@@ -1,5 +1,6 @@
 import { lazy } from 'solid-js';
 import { type RouteDefinition } from '@solidjs/router';
+
 type RouteConfig = Omit<RouteDefinition, 'children'> & {
   children?: RouteConfig[];
   meta?: {
@@ -32,6 +33,15 @@ const routes: RouteConfig[] = [
         meta: {
           name: 'Button',
           key: 'button',
+          visible: true,
+        },
+      },
+      {
+        path: 'input',
+        component: lazy(() => import('./pages/input-page')),
+        meta: {
+          name: 'Input',
+          key: 'input',
           visible: true,
         },
       },
