@@ -102,6 +102,7 @@ $padding-x: 12px;
   input {
     border-color: $warn-color-500;
     &:not(:disabled, :read-only):where(:focus, :focus-within, :focus-visible) {
+      border-color: $warn-color-500;
       box-shadow: 0 0 0 2px $warn-color-200;
     }
     &:not(:disabled, :read-only):hover {
@@ -118,6 +119,7 @@ $padding-x: 12px;
   input {
     border-color: $error-color-500;
     &:not(:disabled, :read-only):where(:focus, :focus-within, :focus-visible) {
+      border-color: $error-color-500;
       box-shadow: 0 0 0 2px $error-color-200;
     }
     &:not(:disabled, :read-only):hover {

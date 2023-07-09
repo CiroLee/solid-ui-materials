@@ -1,4 +1,4 @@
-import { type Component, type JSX, Show, createEffect, createSignal } from 'solid-js';
+import { type Component, type JSX, Show, createEffect, createSignal, createMemo } from 'solid-js';
 import SIcon from '../SIcon';
 import './index.scss';
 interface SInputProps {
@@ -20,6 +20,13 @@ interface SInputProps {
 }
 const SInput: Component<SInputProps> = (props) => {
   const [count, setCount] = createSignal('');
+  const [asPassword, setAsPassword] = createSignal(true);
+  const inputType = createMemo(() => {
+    if (props.type === 'password') {
+      return asPassword() ? 'password' : 'text';
+    }
+    return props.type || 'text';
+  });
   const onInputHandler = (e: Event) => {
     const target = e.target as HTMLInputElement;
     if (props.maxLength && target.value.length > props.maxLength) {
@@ -49,7 +56,7 @@ const SInput: Component<SInputProps> = (props) => {
         <div class="s-input__prefix">{props.prefix}</div>
       </Show>
       <input
-        type={props.type || 'text'}
+        type={inputType()}
         disabled={props.disabled}
         readonly={props.readonly}
         value={props.value || ''}
@@ -66,6 +73,11 @@ const SInput: Component<SInputProps> = (props) => {
       </Show>
       <Show when={props.showCount}>
         <span class="s-input__suffix s-input__count">{count()}</span>
+      </Show>
+      <Show when={props.type === 'password'}>
+        <div class="s-input__suffix s-input__clear" onClick={() => setAsPassword(!asPassword())}>
+          <SIcon name={`${asPassword() ? 'eye-close-line' : 'eye-line'}`} />
+        </div>
       </Show>
     </div>
   );

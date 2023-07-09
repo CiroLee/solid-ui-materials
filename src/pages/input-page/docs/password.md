@@ -1,12 +1,10 @@
-```typescript
+```ts
 import { type Component } from 'solid-js';
 import SInput from 'your path';
 const App: Component = () => {
   return (
     <div>
-      <SIcon name="home-smile-2-line" />
-      <SIcon name="home-smile-2-line" size="24px" />
-      <SIcon name="home-smile-2-line" size="32px" />
+      <SInput type="password" />
     </div>
   );
 };

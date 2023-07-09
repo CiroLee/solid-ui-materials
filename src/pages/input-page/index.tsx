@@ -1,31 +1,66 @@
 import { createSignal } from 'solid-js';
+import { A } from '@solidjs/router';
 import SInput from '@/components/SInput';
 import SIcon from '@/components/SIcon';
+import CodeView from '@/business/CodeView';
+import CodeDrawer from '@/business/CodeDrawer';
+import { html as baseUseStr } from './docs/base-use.md';
+import { html as sizeStr } from './docs/size.md';
+import { html as preSuffixStr } from './docs/pre-suffix.md';
+import { html as statusStr } from './docs/status.md';
+import { html as clearStr } from './docs/clear.md';
+import { html as countStr } from './docs/count.md';
+import { html as passwordStr } from './docs/password.md';
+import SourceLink from '@/business/SourceLink';
 export default function InputPage() {
+  const tabs = [
+    {
+      name: 'tsx',
+      path: 'components/SInput/index.tsx',
+    },
+    {
+      name: 'scss',
+      path: 'components/SInput/index.scss',
+    },
+  ];
   const [inputValue1, setInputValue1] = createSignal('');
   const [inputValue2, setInputValue2] = createSignal('');
   const [inputValue3, setInputValue3] = createSignal('');
+  const [showCodeDrawer, setShowCodeDrawer] = createSignal(false);
   return (
     <>
       <div flex items-center justify-between>
         <h3>SInput</h3>
         <div>
-          <span hover:text-blue-600 text-gray cursor-pointer mr-4>
+          <span hover:text-blue-600 text-gray cursor-pointer mr-4 onClick={() => setShowCodeDrawer(true)}>
             code
           </span>
+          <SourceLink path="SIcon" name="source" />
         </div>
       </div>
+      <p text-gray>
+        depend on{' '}
+        <A
+          class="text-blue decoration-none"
+          activeClass="text-blue-600"
+          inactiveClass="text-blue-600"
+          href="/components/icon">
+          SIcon
+        </A>
+      </p>
       <h4>基本使用</h4>
       <div w-540px>
-        <p>{inputValue1()}</p>
+        <p>value: {inputValue1()}</p>
         <SInput value={inputValue1()} placeholder="input sth..." onChange={setInputValue1} />
       </div>
+      <CodeView html={baseUseStr} />
       <h4>不同尺寸</h4>
       <div w-540px children:mb-3>
         <SInput size="small" placeholder="small size" />
         <SInput size="medium" placeholder="medium size" />
         <SInput size="large" placeholder="large size" />
       </div>
+      <CodeView html={sizeStr} />
       <h4>前缀和后缀</h4>
       <div w-540px children:mb-3>
         <SInput placeholder="prefix icon" prefix={<SIcon name="user-line" color="gray" />} />
@@ -36,6 +71,7 @@ export default function InputPage() {
           suffix={<SIcon name="information-line" color="#b9b5b5" title="information" />}
         />
       </div>
+      <CodeView html={preSuffixStr} />
       <h4>不同状态</h4>
       <div w-540px children:mb-3>
         <SInput status="warn" placeholder="warn" prefix={<SIcon name="shield-keyhole-line" />} />
@@ -47,12 +83,14 @@ export default function InputPage() {
           value="disabled"
           prefix={<SIcon name="shield-keyhole-line" color="#BABABA" />}
         />
-        <SInput readonly value="apple" />
+        <SInput readonly value="readonly" />
       </div>
+      <CodeView html={statusStr} />
       <h4>可清除</h4>
       <div w-540px>
         <SInput clearable placeholder="input sth..." value={inputValue2()} onChange={setInputValue2} />
       </div>
+      <CodeView html={clearStr} />
       <h4>显示计数</h4>
       <div w-540px>
         <SInput
@@ -64,6 +102,13 @@ export default function InputPage() {
           onChange={setInputValue3}
         />
       </div>
+      <CodeView html={countStr} />
+      <h4>密码</h4>
+      <div w-540px>
+        <SInput type="password" />
+      </div>
+      <CodeView html={passwordStr} />
+      <CodeDrawer show={showCodeDrawer()} tabs={tabs} onCancel={() => setShowCodeDrawer(false)} />
     </>
   );
 }
