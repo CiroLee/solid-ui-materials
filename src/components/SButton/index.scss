@@ -1,13 +1,17 @@
 // color variables
+$primary-color-200: #bf91fd;
 $primary-color-400: #a976f9;
 $primary-color-500: #8749f6;
 $primary-color-600: #6735d2;
+$success-color-200: #b7f764;
 $success-color-400: #99ef3e;
 $success-color-500: #6be503;
 $success-color-600: #51c402;
+$warn-color-200: #ffda8c;
 $warn-color-400: #fecb70;
 $warn-color-500: #ffb343;
 $warn-color-600: #db8f31;
+$danger-color-200: #fda18c;
 $danger-color-400: #fb7d71;
 $danger-color-500: #f94141;
 $danger-color-600: #d72f3e;
@@ -20,7 +24,6 @@ $border-radius: 4px;
 $trans-duration: 0.15s;
 $disabled-color: #bababa;
 $disabled-bg: #ebebeb;
-$focus-outline-color: #82bdf5;
 $small-padding-x: 16px;
 $medium-padding-x: 20px;
 $large-padding-x: 24px;
@@ -29,10 +32,13 @@ $medium-height: 40px;
 $large-height: 48px;
 
 // scss mixin
-@mixin s-button($bg, $active-bg, $hover-bg) {
+@mixin s-button($bg, $active-bg, $hover-bg, $focus-color) {
   border: 0;
   background-color: $bg;
   color: #fff;
+  &:focus-visible {
+    box-shadow: 0 0 0 2px $focus-color;
+  }
   &:active:not(:disabled, .s-button--loading) {
     background-color: $active-bg;
   }
@@ -55,12 +61,14 @@ $large-height: 48px;
   transition-property: border-color, background-color, color;
   transition-duration: $trans-duration;
   transition-timing-function: linear;
+  font-size: 14px;
+  color: #333;
   cursor: pointer;
   &--loading {
     cursor: default;
   }
-  &:where(:focus-visible) {
-    box-shadow: 0 0 0 3px $focus-outline-color;
+  &:focus-visible {
+    box-shadow: 0 0 0 2px $primary-color-200;
   }
   &:disabled[class] {
     outline: 0;
@@ -103,19 +111,19 @@ $large-height: 48px;
 }
 
 .s-button--primary[class] {
-  @include s-button($primary-color-500, $primary-color-600, $primary-color-400);
+  @include s-button($primary-color-500, $primary-color-600, $primary-color-400, $primary-color-200);
 }
 
 .s-button--success[class] {
-  @include s-button($success-color-500, $success-color-600, $success-color-400);
+  @include s-button($success-color-500, $success-color-600, $success-color-400, $success-color-200);
 }
 
 .s-button--warn[class] {
-  @include s-button($warn-color-500, $warn-color-600, $warn-color-400);
+  @include s-button($warn-color-500, $warn-color-600, $warn-color-400, $warn-color-200);
 }
 
 .s-button--danger[class] {
-  @include s-button($danger-color-500, $danger-color-600, $danger-color-400);
+  @include s-button($danger-color-500, $danger-color-600, $danger-color-400, $danger-color-200);
 }
 
 .s-button--small {
@@ -135,6 +143,7 @@ $large-height: 48px;
 .s-button--large {
   height: $large-height;
   padding: 0 $large-padding-x;
+  font-size: 16px;
   &.round {
     border-radius: calc($large-height / 2);
   }
