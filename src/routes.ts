@@ -45,6 +45,15 @@ const routes: RouteConfig[] = [
           visible: true,
         },
       },
+      {
+        path: 'textarea',
+        component: lazy(() => import('./pages/textarea-page')),
+        meta: {
+          name: 'Textarea',
+          key: 'textarea',
+          visible: true,
+        },
+      },
     ],
   },
 

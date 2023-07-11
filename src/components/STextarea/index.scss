@@ -1,0 +1,101 @@
+/* stylelint-disable no-descending-specificity */
+
+// color variables
+$primary-color-500: #8749f6;
+$primary-color-100: #ebdafe;
+$warn-color-500: #ffb343;
+$warn-color-100: #fff6d9;
+$error-color-500: #f94141;
+$error-color-100: #fee7d9;
+
+// attribute variables
+$default-border-color: #dbdbdb;
+$placeholder-color: #bababa;
+$border-radius: 4px;
+$padding-x: 12px;
+$trans-duration: 0.15s;
+$disabled-color: #bababa;
+$disabled-bg-color: #f0f0f0;
+$fix-icon-size: 18px;
+$fix-color: #c2c2c2;
+
+.s-textarea {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  textarea {
+    border: 1px solid $default-border-color;
+    border-radius: $border-radius;
+    outline: 0;
+    padding: $padding-x;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition-property: border-color, background-color, box-shadow, color;
+    transition-duration: $trans-duration;
+    transition-timing-function: linear;
+    resize: var(--resize);
+    &::placeholder {
+      color: $placeholder-color;
+    }
+    &:disabled {
+      color: $disabled-color;
+      border-color: $default-border-color;
+      background-color: $disabled-bg-color;
+      cursor: not-allowed;
+    }
+    &:not(:disabled, :read-only):where(:focus, :focus-within, :focus-visible) {
+      border-color: $primary-color-500;
+      box-shadow: 0 0 0 2px $primary-color-100;
+    }
+    &:not(:disabled, :read-only):hover {
+      border-color: $primary-color-500;
+    }
+  }
+}
+
+.s-textarea--warn {
+  textarea {
+    border-color: $warn-color-500;
+    &:not(:disabled, :read-only):where(:focus, :focus-within, :focus-visible) {
+      border-color: $warn-color-500;
+      box-shadow: 0 0 0 2px $warn-color-100;
+    }
+    &:not(:disabled, :read-only):hover {
+      border-color: $warn-color-500;
+    }
+  }
+}
+
+.s-textarea--error {
+  textarea {
+    border-color: $error-color-500;
+    &:not(:disabled, :read-only):where(:focus, :focus-within, :focus-visible) {
+      border-color: $error-color-500;
+      box-shadow: 0 0 0 2px $error-color-100;
+    }
+    &:not(:disabled, :read-only):hover {
+      border-color: $error-color-500;
+    }
+  }
+}
+
+.s-textarea__suffix {
+  position: absolute;
+  top: $padding-x;
+  right: $padding-x;
+  font-size: $fix-icon-size;
+  color: $fix-color;
+  cursor: pointer;
+}
+
+.s-textarea__count {
+  font-size: 14px;
+  color: $fix-color;
+  margin-top: 4px;
+  text-align: right;
+}

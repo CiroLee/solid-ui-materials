@@ -50,8 +50,7 @@ const SInput: Component<SInputProps> = (props) => {
       } ${props.class || ''}`
         .replace(/\s{2,}/g, ' ')
         .trim()}
-      style={{ '--count-width': props.countWidth }}
-      data-count={count()}>
+      style={{ '--count-width': props.countWidth }}>
       <Show when={props.prefix}>
         <div class="s-input__prefix">{props.prefix}</div>
       </Show>

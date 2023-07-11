@@ -2,11 +2,11 @@
 
 // color variables
 $primary-color-500: #8749f6;
-$primary-color-200: #d7b6fd;
+$primary-color-100: #ebdafe;
 $warn-color-500: #ffb343;
-$warn-color-200: #fee9b2;
+$warn-color-100: #fff6d9;
 $error-color-500: #f94141;
-$error-color-200: #ffc6b3;
+$error-color-100: #fee7d9;
 
 // attribute variables
 $default-border-color: #dbdbdb;
@@ -36,12 +36,13 @@ $padding-x: 12px;
     background-color: transparent;
     box-sizing: border-box;
     transition: all $trans-duration linear;
+    font-size: 14px;
     &::placeholder {
       color: $placeholder-color;
     }
     &:not(:disabled, :read-only):where(:focus, :focus-within, :focus-visible) {
       border-color: $primary-color-500;
-      box-shadow: 0 0 0 2px $primary-color-200;
+      box-shadow: 0 0 0 2px $primary-color-100;
     }
     &:not(:disabled, :read-only):hover {
       border-color: $primary-color-500;
@@ -103,7 +104,7 @@ $padding-x: 12px;
     border-color: $warn-color-500;
     &:not(:disabled, :read-only):where(:focus, :focus-within, :focus-visible) {
       border-color: $warn-color-500;
-      box-shadow: 0 0 0 2px $warn-color-200;
+      box-shadow: 0 0 0 2px $warn-color-100;
     }
     &:not(:disabled, :read-only):hover {
       border-color: $warn-color-500;
@@ -120,7 +121,7 @@ $padding-x: 12px;
     border-color: $error-color-500;
     &:not(:disabled, :read-only):where(:focus, :focus-within, :focus-visible) {
       border-color: $error-color-500;
-      box-shadow: 0 0 0 2px $error-color-200;
+      box-shadow: 0 0 0 2px $error-color-100;
     }
     &:not(:disabled, :read-only):hover {
       border-color: $error-color-500;
