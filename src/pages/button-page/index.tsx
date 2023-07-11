@@ -44,20 +44,20 @@ export default function SButtonPage() {
         <SButton type="text">text</SButton>
         <SButton disabled>primary</SButton>
       </div>
-      <CodeView html={buttonTypeStr} />
+      <CodeView content={buttonTypeStr} />
       <h4>按钮尺寸</h4>
       <div class="flex items-center children:(mr-2 mb-2)">
         <SButton size="small">small</SButton>
         <SButton size="medium">medium</SButton>
         <SButton size="large">large</SButton>
       </div>
-      <CodeView html={buttonSizeStr} />
+      <CodeView content={buttonSizeStr} />
       <h4>按钮形状</h4>
       <div class="flex items-center children:(mr-2 mb-2)">
         <SButton round>round</SButton>
         <SButton circle>C</SButton>
       </div>
-      <CodeView html={buttonShapeStr} />
+      <CodeView content={buttonShapeStr} />
       <h4>block按钮</h4>
       <div w-400px p-12px border border-solid border-gray-300 rounded children:mb-2>
         <SButton block>block</SButton>
@@ -68,7 +68,7 @@ export default function SButtonPage() {
           block
         </SButton>
       </div>
-      <CodeView html={buttonBlockStr} />
+      <CodeView content={buttonBlockStr} />
       <h4>应用-按钮组</h4>
       <div class="button-group">
         <SButton type="primary">apple</SButton>
@@ -86,7 +86,7 @@ export default function SButtonPage() {
           banana
         </SButton>
       </div>
-      <CodeView html={buttonGroupStr} />
+      <CodeView content={buttonGroupStr} />
       <h4>应用-带有图标按钮</h4>
       <div class="flex items-center children:(mr-2 mb-2)">
         <SButton type="primary">
@@ -102,7 +102,7 @@ export default function SButtonPage() {
           <span style={{ 'padding-left': '4px' }}>loading</span>
         </SButton>
       </div>
-      <CodeView html={buttonIconStr} />
+      <CodeView content={buttonIconStr} />
       <CodeDrawer show={showCodeDrawer()} tabs={tabs} onCancel={() => setShowCodeDrawer(false)} />
     </>
   );

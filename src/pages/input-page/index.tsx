@@ -53,14 +53,14 @@ export default function InputPage() {
         <p>value: {inputValue1()}</p>
         <SInput value={inputValue1()} placeholder="input sth..." onChange={setInputValue1} />
       </div>
-      <CodeView html={baseUseStr} />
+      <CodeView content={baseUseStr} />
       <h4>不同尺寸</h4>
       <div w-540px children:mb-3>
         <SInput size="small" placeholder="small size" />
         <SInput size="medium" placeholder="medium size" />
         <SInput size="large" placeholder="large size" />
       </div>
-      <CodeView html={sizeStr} />
+      <CodeView content={sizeStr} />
       <h4>前缀和后缀</h4>
       <div w-540px children:mb-3>
         <SInput placeholder="prefix icon" prefix={<SIcon name="user-line" color="gray" />} />
@@ -71,7 +71,7 @@ export default function InputPage() {
           suffix={<SIcon name="information-line" color="#b9b5b5" title="information" />}
         />
       </div>
-      <CodeView html={preSuffixStr} />
+      <CodeView content={preSuffixStr} />
       <h4>不同状态</h4>
       <div w-540px children:mb-3>
         <SInput status="warn" placeholder="warn" prefix={<SIcon name="shield-keyhole-line" />} />
@@ -85,12 +85,12 @@ export default function InputPage() {
         />
         <SInput readonly value="readonly" />
       </div>
-      <CodeView html={statusStr} />
+      <CodeView content={statusStr} />
       <h4>可清除</h4>
       <div w-540px>
         <SInput clearable placeholder="input sth..." value={inputValue2()} onChange={setInputValue2} />
       </div>
-      <CodeView html={clearStr} />
+      <CodeView content={clearStr} />
       <h4>显示计数</h4>
       <div w-540px>
         <SInput
@@ -102,12 +102,12 @@ export default function InputPage() {
           onChange={setInputValue3}
         />
       </div>
-      <CodeView html={countStr} />
+      <CodeView content={countStr} />
       <h4>密码</h4>
       <div w-540px>
         <SInput type="password" />
       </div>
-      <CodeView html={passwordStr} />
+      <CodeView content={passwordStr} />
       <CodeDrawer show={showCodeDrawer()} tabs={tabs} onCancel={() => setShowCodeDrawer(false)} />
     </>
   );
