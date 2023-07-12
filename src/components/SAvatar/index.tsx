@@ -7,7 +7,7 @@ interface SAvatarProps {
   shape?: 'circle' | 'square';
   alt?: string;
   class?: string;
-  style?: JSX.CSSProperties | string;
+  style?: JSX.CSSProperties;
 }
 
 function DefaultAvatar() {
@@ -20,7 +20,7 @@ const SAvatar: Component<SAvatarProps> = (props) => {
       shape: 'circle',
       class: '',
       alt: 'img',
-      style: '',
+      style: {},
     },
     props,
   );
