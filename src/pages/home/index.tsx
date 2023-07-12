@@ -15,7 +15,7 @@ const Home: Component = () => {
         <span font-bold text-32px>
           Just
         </span>
-        <span class={style['inline-code']}>copy</span> codes and <span class={style['inline-code']}>paste</span> to your
+        <span class={style['inline-code']}>copy</span> and <span class={style['inline-code']}>paste</span> codes to your
         project.
       </div>
     </div>

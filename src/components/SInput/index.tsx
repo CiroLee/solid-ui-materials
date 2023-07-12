@@ -1,4 +1,4 @@
-import { type Component, type JSX, Show, createEffect, createSignal, createMemo } from 'solid-js';
+import { type Component, type JSX, Show, mergeProps, createEffect, createSignal, createMemo } from 'solid-js';
 import SIcon from '../SIcon';
 import './index.scss';
 interface SInputProps {
@@ -16,9 +16,18 @@ interface SInputProps {
   readonly?: boolean;
   countWidth?: string;
   class?: string;
+  style?: JSX.CSSProperties;
   onChange?: (value: string) => void;
 }
 const SInput: Component<SInputProps> = (props) => {
+  const merged = mergeProps(
+    {
+      size: 'medium',
+      class: '',
+      style: {},
+    },
+    props,
+  );
   const [count, setCount] = createSignal('');
   const [asPassword, setAsPassword] = createSignal(true);
   const inputType = createMemo(() => {
@@ -45,12 +54,11 @@ const SInput: Component<SInputProps> = (props) => {
   });
   return (
     <div
-      class={`s-input ${props.size ? `s-input--${props.size}` : 's-input--medium'} ${
-        props.status ? `s-input--${props.status}` : ''
-      } ${props.class || ''}`
+      class={`s-input s-input--${merged.size} ${merged.status ? `s-input--${merged.status}` : ''} 
+      ${merged.class}`
         .replace(/\s{2,}/g, ' ')
         .trim()}
-      style={{ '--count-width': props.countWidth }}>
+      style={{ ...merged.style, '--count-width': props.countWidth }}>
       <Show when={props.prefix}>
         <div class="s-input__prefix">{props.prefix}</div>
       </Show>

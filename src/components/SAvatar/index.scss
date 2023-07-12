@@ -1,0 +1,69 @@
+$large-size: 48px;
+$medium-size: 40px;
+$small-size: 32px;
+$tiny-size: 24px;
+$border-radius: 4px;
+$default-bg: #e1e0e0;
+
+.s-avatar {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  background-color: $default-bg;
+  color: #fff;
+  overflow: hidden;
+  img {
+    object-fit: cover;
+  }
+  &__default,
+  &__img,
+  &__text {
+    width: 100%;
+    height: 100%;
+  }
+  &__default {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNiMGIwYjAiIGQ9Ik0yMCAyMmgtMnYtMmEzIDMgMCAwIDAtMy0zSDlhMyAzIDAgMCAwLTMgM3YySDR2LTJhNSA1IDAgMCAxIDUtNWg2YTUgNSAwIDAgMSA1IDV2MlptLTgtOWE2IDYgMCAxIDEgMC0xMmE2IDYgMCAwIDEgMCAxMlptMC0yYTQgNCAwIDEgMCAwLThhNCA0IDAgMCAwIDAgOFoiLz48L3N2Zz4=');
+    background-size: 56% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  &__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.s-avatar--circle {
+  border-radius: 50%;
+}
+
+.s-avatar--square {
+  border-radius: $border-radius;
+}
+
+.s-avatar--large {
+  width: $large-size;
+  height: $large-size;
+  .s-avatar__text {
+    font-size: calc($large-size / 2);
+  }
+}
+
+.s-avatar--medium {
+  width: $medium-size;
+  height: $medium-size;
+  .s-avatar__text {
+    font-size: calc($medium-size / 2);
+  }
+}
+
+.s-avatar--small {
+  width: $small-size;
+  height: $small-size;
+}
+
+.s-avatar--tiny {
+  width: $tiny-size;
+  height: $tiny-size;
+}

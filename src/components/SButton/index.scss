@@ -77,10 +77,10 @@ $large-height: 48px;
     background-color: $disabled-bg !important;
     cursor: not-allowed;
   }
-  &.round {
+  &--round {
     border-radius: calc($medium-height / 2);
   }
-  &.circle {
+  &--circle {
     padding: 0;
     width: $medium-height;
     height: $medium-height;
@@ -130,10 +130,10 @@ $large-height: 48px;
   height: $small-height;
   padding: 0 $small-padding-x;
   font-size: 14px;
-  &.round {
+  .s-button--round {
     border-radius: calc($small-height / 2);
   }
-  &.circle {
+  .s-button--circle {
     width: $small-height;
     height: $small-height;
     border-radius: 50%;
@@ -144,16 +144,16 @@ $large-height: 48px;
   height: $large-height;
   padding: 0 $large-padding-x;
   font-size: 16px;
-  &.round {
+  .s-button--round {
     border-radius: calc($large-height / 2);
   }
-  &.circle {
+  .s-button--circle {
     width: $large-height;
     height: $large-height;
     border-radius: 50%;
   }
 }
 
-.s-button.block {
+.s-button--block {
   width: 100%;
 }

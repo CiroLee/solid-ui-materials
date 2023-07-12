@@ -54,6 +54,15 @@ const routes: RouteConfig[] = [
           visible: true,
         },
       },
+      {
+        path: 'avatar',
+        component: lazy(() => import('./pages/avatar-page')),
+        meta: {
+          name: 'Avatar',
+          key: 'avatar',
+          visible: true,
+        },
+      },
     ],
   },
 

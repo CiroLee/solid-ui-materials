@@ -1,0 +1,32 @@
+.avatar-group {
+  .s-avatar {
+    border: 2px solid #fff;
+    &:not(:first-child) {
+      margin-left: -12px;
+    }
+  }
+}
+
+.avatar-status {
+  position: relative;
+  .dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    right: 2px;
+    bottom: 0;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  &.online .dot {
+    background-color: #10c310;
+  }
+  &.offline {
+    img {
+      filter: grayscale(100%);
+    }
+    .dot {
+      background-color: #b4b4b4;
+    }
+  }
+}
