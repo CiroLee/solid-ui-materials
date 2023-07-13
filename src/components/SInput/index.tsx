@@ -23,6 +23,7 @@ const SInput: Component<SInputProps> = (props) => {
   const merged = mergeProps(
     {
       size: 'medium',
+      countWidth: '0px',
       class: '',
       style: {},
     },
@@ -58,7 +59,7 @@ const SInput: Component<SInputProps> = (props) => {
       ${merged.class}`
         .replace(/\s{2,}/g, ' ')
         .trim()}
-      style={{ ...merged.style, '--count-width': props.countWidth }}>
+      style={{ ...merged.style, '--count-width': merged.countWidth }}>
       <Show when={props.prefix}>
         <div class="s-input__prefix">{props.prefix}</div>
       </Show>

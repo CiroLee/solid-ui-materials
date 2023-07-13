@@ -53,8 +53,6 @@ $padding-x: 12px;
       background-color: $disabled-bg-color;
       cursor: not-allowed;
     }
-
-    // with prefix and suffix
     &:nth-child(2) {
       // special for only icon prefix
       padding-left: calc($padding-x + $fix-icon-size + 2px);

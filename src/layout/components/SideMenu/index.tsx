@@ -14,7 +14,7 @@ const SideMenu: Component<SideMenuProps> = (props) => {
         href="/"
         class="decoration-none text-inherit px-8px h-44px mb-2 flex items-center font-bold 
         cursor-pointer">
-        solid-ui-materials
+        <span>solid-ui-materials</span>
       </A>
       <For each={menus}>
         {(menu) => (
@@ -25,7 +25,7 @@ const SideMenu: Component<SideMenuProps> = (props) => {
             activeClass="text-inherit"
             inactiveClass="text-#b2b2b2">
             <Show when={menu?.meta?.icon}>
-              <SIcon name={menu.meta?.icon} class="mr-2" />
+              <SIcon name={menu.meta?.icon as string} class="mr-2" />
             </Show>
             <span>{menu?.meta?.name}</span>
           </A>
