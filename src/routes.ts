@@ -63,6 +63,15 @@ const routes: RouteConfig[] = [
           visible: true,
         },
       },
+      {
+        path: 'popup',
+        component: lazy(() => import('./pages/popup-page')),
+        meta: {
+          name: 'Popup',
+          key: 'popup',
+          visible: true,
+        },
+      },
     ],
   },
 

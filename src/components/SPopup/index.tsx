@@ -1,11 +1,12 @@
 import { type Component, type JSX, createSignal, createEffect, Show, onCleanup } from 'solid-js';
 import './index.scss';
-
+export type Placement = 'top' | 'bottom' | 'left' | 'right' | 'center';
 interface PopupProps {
   show: boolean;
   children?: JSX.Element;
+  isBlur?: boolean;
   maskClosable?: boolean;
-  placement?: 'top' | 'bottom' | 'left' | 'right' | 'center';
+  placement?: Placement;
   onCancel?: () => void;
 }
 const SPopup: Component<PopupProps> = (props) => {
@@ -53,11 +54,16 @@ const SPopup: Component<PopupProps> = (props) => {
 
   return (
     <Show when={props.show || !endHidden()}>
-      <div class="popup">
-        <div ref={maskRef} class="popup__mask" classList={{ show: visibleAni() }} onClick={maskClick} />
+      <div class="s-popup">
+        <div
+          ref={maskRef}
+          class={`s-popup__mask ${props.isBlur ? 's-popup__mask--blur' : ''}`.replace(/\s{2,}/g, ' ').trim()}
+          classList={{ show: visibleAni() }}
+          onClick={maskClick}
+        />
         <div
           ref={contentRef}
-          class={`popup__content ${props.placement || 'center'}`}
+          class={`s-popup__content ${props.placement || 'center'}`}
           classList={{ show: visibleAni() }}>
           {props.children}
         </div>
