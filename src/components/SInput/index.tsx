@@ -1,4 +1,4 @@
-import { type Component, type JSX, Show, mergeProps, createEffect, createSignal, createMemo } from 'solid-js';
+import { type Component, type JSX, Show, mergeProps, createEffect, createSignal, Switch, Match } from 'solid-js';
 import SIcon from '../SIcon';
 import './index.scss';
 interface SInputProps {
@@ -31,12 +31,12 @@ const SInput: Component<SInputProps> = (props) => {
   );
   const [count, setCount] = createSignal('');
   const [asPassword, setAsPassword] = createSignal(true);
-  const inputType = createMemo(() => {
+  const inputType = () => {
     if (props.type === 'password') {
       return asPassword() ? 'password' : 'text';
     }
     return props.type || 'text';
-  });
+  };
   const onInputHandler = (e: Event) => {
     const target = e.target as HTMLInputElement;
     if (props.maxLength && target.value.length > props.maxLength) {
@@ -71,22 +71,24 @@ const SInput: Component<SInputProps> = (props) => {
         placeholder={props.placeholder}
         onInput={onInputHandler}
       />
-      <Show when={props.suffix}>
-        <div class="s-input__suffix">{props.suffix}</div>
-      </Show>
-      <Show when={props.clearable && props.value}>
-        <div class="s-input__suffix s-input__clear" onClick={() => props.onChange?.('')}>
-          <SIcon name="close-circle-fill" />
-        </div>
-      </Show>
-      <Show when={props.showCount}>
-        <span class="s-input__suffix s-input__count">{count()}</span>
-      </Show>
-      <Show when={props.type === 'password'}>
-        <div class="s-input__suffix s-input__clear" onClick={() => setAsPassword(!asPassword())}>
-          <SIcon name={`${asPassword() ? 'eye-close-line' : 'eye-line'}`} />
-        </div>
-      </Show>
+      <Switch>
+        <Match when={props.suffix}>
+          <div class="s-input__suffix">{props.suffix}</div>
+        </Match>
+        <Match when={props.clearable && props.value}>
+          <div class="s-input__suffix s-input__clear" onClick={() => props.onChange?.('')}>
+            <SIcon name="close-circle-fill" />
+          </div>
+        </Match>
+        <Match when={props.showCount}>
+          <span class="s-input__suffix s-input__count">{count()}</span>
+        </Match>
+        <Match when={props.type === 'password'}>
+          <div class="s-input__suffix s-input__clear" onClick={() => setAsPassword(!asPassword())}>
+            <SIcon name={`${asPassword() ? 'eye-close-line' : 'eye-line'}`} />
+          </div>
+        </Match>
+      </Switch>
     </div>
   );
 };

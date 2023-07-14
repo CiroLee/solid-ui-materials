@@ -15,6 +15,10 @@ const Home: Component = () => {
         </span>
         <span class={style['inline-code']}>re-useable</span>
         <span font-bold text-32px>
+          Easy
+        </span>
+        <span mx-1>to modify</span>
+        <span font-bold text-32px>
           Just
         </span>
         <span class={style['inline-code']}>copy</span> and <span class={style['inline-code']}>paste</span> codes to your
