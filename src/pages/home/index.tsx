@@ -17,6 +17,15 @@ const Home: Component = () => {
             Zero
           </span>
           <span class={style['inline-code']}>3rd dependencies</span>
+          <span text-gray-400>
+            (except some special components like{' '}
+            <em>
+              <A class="text-inherit" href="/components/icon">
+                Icon
+              </A>
+            </em>
+            )
+          </span>
         </p>
         <p>
           <span font-bold text-32px>
