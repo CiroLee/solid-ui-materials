@@ -1,4 +1,4 @@
-import{d as m,i as n,c as a,S as l,t,e as u}from"./index-0b8f631a.js";import{S as g,C as c,a as d}from"./index-14fe7219.js";const x=`<pre class="hljs"><code><span class="hljs-keyword">import</span> { <span class="hljs-keyword">type</span> <span class="hljs-title class_">Component</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;solid-js&#x27;</span>;
+import{d as m,i as n,c as a,S as l,t,e as u}from"./index-eec5b5e2.js";import{S as g,C as c,a as d}from"./index-adce588d.js";const x=`<pre class="hljs"><code><span class="hljs-keyword">import</span> { <span class="hljs-keyword">type</span> <span class="hljs-title class_">Component</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;solid-js&#x27;</span>;
 <span class="hljs-keyword">import</span> <span class="hljs-title class_">SInput</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;your path&#x27;</span>;
 <span class="hljs-keyword">const</span> <span class="hljs-title class_">App</span>: <span class="hljs-title class_">Component</span> = <span class="hljs-function">() =&gt;</span> {
   <span class="hljs-keyword">return</span> (
