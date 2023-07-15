@@ -1,4 +1,4 @@
-import{d as m,i as n,c as a,S as e,t as p,e as y}from"./index-eec5b5e2.js";import{S as x,C as c,a as S}from"./index-adce588d.js";import{S as l}from"./index-670096d5.js";const b=`<pre class="hljs"><code><span class="hljs-keyword">import</span> { <span class="hljs-keyword">type</span> <span class="hljs-title class_">Component</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;solid-js&#x27;</span>;
+import{d as m,i as n,c as a,S as e,t as p,e as y}from"./index-5e0c0ca6.js";import{S as b,C as c,a as x}from"./index-0777765a.js";import{S as l}from"./index-6ae85893.js";const S=`<pre class="hljs"><code><span class="hljs-keyword">import</span> { <span class="hljs-keyword">type</span> <span class="hljs-title class_">Component</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;solid-js&#x27;</span>;
 <span class="hljs-keyword">import</span> <span class="hljs-title class_">SButton</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;your path&#x27;</span>;
 <span class="hljs-keyword">const</span> <span class="hljs-title class_">App</span>: <span class="hljs-title class_">Component</span> = <span class="hljs-function">() =&gt;</span> {
   <span class="hljs-keyword">return</span> (
@@ -35,15 +35,16 @@ import{d as m,i as n,c as a,S as e,t as p,e as y}from"./index-eec5b5e2.js";impor
 <span class="hljs-keyword">const</span> <span class="hljs-title class_">App</span>: <span class="hljs-title class_">Component</span> = <span class="hljs-function">() =&gt;</span> {
   <span class="hljs-keyword">return</span> (
     <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">SButton</span> <span class="hljs-attr">round</span>&gt;</span>round<span class="hljs-tag">&lt;/<span class="hljs-name">SButton</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">SButton</span> <span class="hljs-attr">circle</span>&gt;</span>C<span class="hljs-tag">&lt;/<span class="hljs-name">SButton</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SButton</span> <span class="hljs-attr">shape</span>=<span class="hljs-string">&quot;default&quot;</span>&gt;</span>default<span class="hljs-tag">&lt;/<span class="hljs-name">SButton</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SButton</span> <span class="hljs-attr">shape</span>=<span class="hljs-string">&quot;round&quot;</span>&gt;</span>round<span class="hljs-tag">&lt;/<span class="hljs-name">SButton</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SButton</span> <span class="hljs-attr">shape</span>=<span class="hljs-string">&quot;circle&quot;</span>&gt;</span>C<span class="hljs-tag">&lt;/<span class="hljs-name">SButton</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
   );
 };
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">App</span>;
 </code></pre>
-`,B=`<pre class="hljs"><code><span class="hljs-keyword">import</span> { <span class="hljs-keyword">type</span> <span class="hljs-title class_">Component</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;solid-js&#x27;</span>;
+`,q=`<pre class="hljs"><code><span class="hljs-keyword">import</span> { <span class="hljs-keyword">type</span> <span class="hljs-title class_">Component</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;solid-js&#x27;</span>;
 <span class="hljs-keyword">import</span> <span class="hljs-title class_">SButton</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;your path&#x27;</span>;
 <span class="hljs-keyword">const</span> <span class="hljs-title class_">App</span>: <span class="hljs-title class_">Component</span> = <span class="hljs-function">() =&gt;</span> {
   <span class="hljs-keyword">return</span> (
@@ -61,7 +62,7 @@ import{d as m,i as n,c as a,S as e,t as p,e as y}from"./index-eec5b5e2.js";impor
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">App</span>;
 </code></pre>
-`,q=`<pre class="hljs"><code><span class="hljs-keyword">import</span> { <span class="hljs-keyword">type</span> <span class="hljs-title class_">Component</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;solid-js&#x27;</span>;
+`,B=`<pre class="hljs"><code><span class="hljs-keyword">import</span> { <span class="hljs-keyword">type</span> <span class="hljs-title class_">Component</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;solid-js&#x27;</span>;
 <span class="hljs-keyword">import</span> <span class="hljs-title class_">SButton</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;your path&#x27;</span>;
 <span class="hljs-keyword">const</span> <span class="hljs-title class_">App</span>: <span class="hljs-title class_">Component</span> = <span class="hljs-function">() =&gt;</span> {
   <span class="hljs-keyword">return</span> (
@@ -108,7 +109,7 @@ import{d as m,i as n,c as a,S as e,t as p,e as y}from"./index-eec5b5e2.js";impor
   }
 }
 </code></pre>
-`,_=`<pre class="hljs"><code><span class="hljs-keyword">import</span> { <span class="hljs-keyword">type</span> <span class="hljs-title class_">Component</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;solid-js&#x27;</span>;
+`,f=`<pre class="hljs"><code><span class="hljs-keyword">import</span> { <span class="hljs-keyword">type</span> <span class="hljs-title class_">Component</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;solid-js&#x27;</span>;
 <span class="hljs-keyword">import</span> <span class="hljs-title class_">SButton</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;your path&#x27;</span>;
 <span class="hljs-keyword">const</span> <span class="hljs-title class_">App</span>: <span class="hljs-title class_">Component</span> = <span class="hljs-function">() =&gt;</span> {
   <span class="hljs-keyword">return</span> (
@@ -131,4 +132,21 @@ import{d as m,i as n,c as a,S as e,t as p,e as y}from"./index-eec5b5e2.js";impor
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">App</span>;
 </code></pre>
-`;const f=p("<div flex items-center justify-between><h3>SButton</h3><div><span hover:text-blue-600 text-gray cursor-pointer mr-4>code"),$=p("<h4>按钮类型"),v=p('<div class="children:mr-2 children:mb-2">'),C=p("<h4>按钮尺寸"),r=p('<div class="flex items-center children:mr-2 children:mb-2">'),A=p("<h4>按钮形状"),z=p("<h4>block按钮"),P=p("<div w-400px p-12px border border-solid border-gray-300 rounded children:mb-2>"),I=p("<h4>应用-按钮组"),j=p('<div class="button-group">'),D=p("<h4>应用-带有图标按钮"),u=p("<span>Add"),E=p("<span>loading");function G(){const i=[{name:"tsx",path:"components/SButton/index.tsx"},{name:"scss",path:"components/SButton/index.scss"}],[g,h]=m(!1);return[(()=>{const s=f(),t=s.firstChild,o=t.nextSibling,d=o.firstChild;return d.$$click=()=>h(!0),n(o,a(x,{path:"SButton",name:"source"}),null),s})(),$(),(()=>{const s=v();return n(s,a(l,{type:"default",children:"default"}),null),n(s,a(l,{type:"primary",children:"primary"}),null),n(s,a(l,{type:"success",children:"success"}),null),n(s,a(l,{type:"warn",children:"warn"}),null),n(s,a(l,{type:"danger",children:"danger"}),null),n(s,a(l,{type:"text",children:"text"}),null),n(s,a(l,{disabled:!0,children:"primary"}),null),s})(),a(c,{content:b}),C(),(()=>{const s=r();return n(s,a(l,{size:"small",children:"small"}),null),n(s,a(l,{size:"medium",children:"medium"}),null),n(s,a(l,{size:"large",children:"large"}),null),s})(),a(c,{content:k}),A(),(()=>{const s=r();return n(s,a(l,{round:!0,children:"round"}),null),n(s,a(l,{circle:!0,children:"C"}),null),s})(),a(c,{content:w}),z(),(()=>{const s=P();return n(s,a(l,{block:!0,children:"block"}),null),n(s,a(l,{block:!0,type:"primary",children:"block"}),null),n(s,a(l,{block:!0,round:!0,type:"primary",children:"block"}),null),s})(),a(c,{content:B}),I(),(()=>{const s=j();return n(s,a(l,{type:"primary",children:"apple"}),null),n(s,a(l,{type:"primary",children:"pear"}),null),n(s,a(l,{type:"primary",children:"banana"}),null),s})(),(()=>{const s=j();return n(s,a(l,{type:"primary",round:!0,children:"apple"}),null),n(s,a(l,{type:"primary",round:!0,children:"pear"}),null),n(s,a(l,{type:"primary",round:!0,children:"banana"}),null),s})(),a(c,{content:q}),D(),(()=>{const s=r();return n(s,a(l,{type:"primary",get children(){return[a(e,{name:"add-circle-line",size:"16px"}),(()=>{const t=u();return t.style.setProperty("padding-left","4px"),t})()]}}),null),n(s,a(l,{type:"primary",get children(){return[(()=>{const t=u();return t.style.setProperty("padding-right","4px"),t})(),a(e,{name:"add-circle-line",size:"16px"})]}}),null),n(s,a(l,{type:"primary",loading:!0,class:"button-loading",get children(){return[a(e,{name:"loader-line",size:"16px"}),(()=>{const t=E();return t.style.setProperty("padding-left","4px"),t})()]}}),null),s})(),a(c,{content:_}),a(S,{get show(){return g()},tabs:i,onCancel:()=>h(!1)})]}y(["click"]);export{G as default};
+<pre class="hljs"><code><span class="hljs-comment">// button-icon.scss</span>
+<span class="hljs-selector-class">.button-loading</span> {
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.6</span>;
+  <span class="hljs-selector-tag">i</span> {
+    <span class="hljs-attribute">animation</span>: loading <span class="hljs-number">0.8s</span> linear infinite;
+  }
+}
+
+<span class="hljs-keyword">@keyframes</span> loading {
+  from {
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(<span class="hljs-number">0</span>);
+  }
+  to {
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(<span class="hljs-number">360deg</span>);
+  }
+}
+</code></pre>
+`;const _=p("<div flex items-center justify-between><h3>SButton</h3><div><span hover:text-blue-600 text-gray cursor-pointer mr-4>code"),$=p("<h4>button type"),v=p('<div class="children:mr-2 children:mb-2">'),C=p("<h4>size"),r=p('<div class="flex items-center children:mr-2 children:mb-2">'),A=p("<h4>shape"),z=p("<h4>block"),P=p("<div w-400px p-12px border border-solid border-gray-300 rounded children:mb-2>"),I=p("<h4>usage - button group"),j=p('<div class="button-group">'),D=p("<h4>usage - button with icon"),i=p("<span>Add"),E=p("<span>loading");function G(){const u=[{name:"tsx",path:"components/SButton/index.tsx"},{name:"scss",path:"components/SButton/index.scss"}],[g,h]=m(!1);return[(()=>{const s=_(),t=s.firstChild,o=t.nextSibling,d=o.firstChild;return d.$$click=()=>h(!0),n(o,a(b,{path:"SButton",name:"source"}),null),s})(),$(),(()=>{const s=v();return n(s,a(l,{type:"default",children:"default"}),null),n(s,a(l,{type:"primary",children:"primary"}),null),n(s,a(l,{type:"success",children:"success"}),null),n(s,a(l,{type:"warn",children:"warn"}),null),n(s,a(l,{type:"danger",children:"danger"}),null),n(s,a(l,{type:"text",children:"text"}),null),n(s,a(l,{disabled:!0,children:"primary"}),null),s})(),a(c,{content:S}),C(),(()=>{const s=r();return n(s,a(l,{size:"small",children:"small"}),null),n(s,a(l,{size:"medium",children:"medium"}),null),n(s,a(l,{size:"large",children:"large"}),null),s})(),a(c,{content:k}),A(),(()=>{const s=r();return n(s,a(l,{shape:"default",children:"default"}),null),n(s,a(l,{shape:"round",children:"round"}),null),n(s,a(l,{shape:"circle",children:"C"}),null),s})(),a(c,{content:w}),z(),(()=>{const s=P();return n(s,a(l,{block:!0,children:"block"}),null),n(s,a(l,{block:!0,type:"primary",children:"block"}),null),n(s,a(l,{block:!0,shape:"round",type:"primary",children:"block"}),null),s})(),a(c,{content:q}),I(),(()=>{const s=j();return n(s,a(l,{type:"primary",children:"apple"}),null),n(s,a(l,{type:"primary",children:"pear"}),null),n(s,a(l,{type:"primary",children:"banana"}),null),s})(),(()=>{const s=j();return n(s,a(l,{type:"primary",shape:"round",children:"apple"}),null),n(s,a(l,{type:"primary",shape:"round",children:"pear"}),null),n(s,a(l,{type:"primary",shape:"round",children:"banana"}),null),s})(),a(c,{content:B}),D(),(()=>{const s=r();return n(s,a(l,{type:"primary",get children(){return[a(e,{name:"add-circle-line",size:"16px"}),(()=>{const t=i();return t.style.setProperty("padding-left","4px"),t})()]}}),null),n(s,a(l,{type:"primary",get children(){return[(()=>{const t=i();return t.style.setProperty("padding-right","4px"),t})(),a(e,{name:"add-circle-line",size:"16px"})]}}),null),n(s,a(l,{type:"primary",loading:!0,class:"button-loading",get children(){return[a(e,{name:"loader-line",size:"16px"}),(()=>{const t=E();return t.style.setProperty("padding-left","4px"),t})()]}}),null),s})(),a(c,{content:f}),a(x,{get show(){return g()},tabs:u,onCancel:()=>h(!1)})]}y(["click"]);export{G as default};
