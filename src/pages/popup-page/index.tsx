@@ -35,8 +35,9 @@ export default function PopupPage() {
           <SourceLink path="SPopup" name="source" />
         </div>
       </div>
-      <p text-gray-400 text-14px>
-        弹出组件是其他弹窗类组件的基础，用于全屏弹窗，如Modal, Drawer等
+      <p text-sub text-14px>
+        The popup component is the basis for other popup-like components for full-screen popups, such as Modal, Drawer,
+        etc.
       </p>
       <div children:mr-3>
         <SButton type="primary" onClick={() => openPopupBox('left')}>

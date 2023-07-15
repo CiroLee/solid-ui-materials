@@ -33,7 +33,7 @@ export default function AvatarPage() {
           <SourceLink path="SAvatar" name="source" />
         </div>
       </div>
-      <h4>不同尺寸</h4>
+      <h4>size</h4>
       <div class="flex items-center children:(mr-3)">
         <SAvatar size="large" />
         <SAvatar size="large" src={avatarUrl} />
@@ -42,13 +42,13 @@ export default function AvatarPage() {
         <SAvatar size="tiny" src={avatarUrl} />
       </div>
       <CodeView content={sizeStr} />
-      <h4>不同形状</h4>
+      <h4>shape</h4>
       <div class="flex items-center children:(mr-3)">
         <SAvatar shape="circle" src={avatarUrl} />
         <SAvatar shape="square" src={avatarUrl} />
       </div>
       <CodeView content={shapeStr} />
-      <h4>文字头像</h4>
+      <h4>text avatar</h4>
       <div class="flex items-center children:(mr-3)">
         <SAvatar size="small" text="A" />
         <SAvatar text="A" />
@@ -56,7 +56,7 @@ export default function AvatarPage() {
         <SAvatar size="large" shape="square" text="A" style={{ color: '#fff', 'background-color': '#42C421' }} />
       </div>
       <CodeView content={textStr} />
-      <h4>应用-头像组</h4>
+      <h4>usage - avatar group</h4>
       <div class="avatar-group">
         <SAvatar src={avatarUrl} />
         <SAvatar src={avatarUrl} />
@@ -64,7 +64,7 @@ export default function AvatarPage() {
         <SAvatar text="+3" />
       </div>
       <CodeView content={avatarGroupStr} />
-      <h4>应用-在线状态</h4>
+      <h4>usage- online/offline</h4>
       <div class="flex children:mr-3">
         <div class="avatar-status online" style={{ width: '40px', height: '40px' }}>
           <div class="dot dot--online" />

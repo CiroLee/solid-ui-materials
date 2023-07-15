@@ -34,7 +34,7 @@ export default function SButtonPage() {
           <SourceLink path="SButton" name="source" />
         </div>
       </div>
-      <h4>按钮类型</h4>
+      <h4>button type</h4>
       <div class="children:(mr-2 mb-2)">
         <SButton type="default">default</SButton>
         <SButton type="primary">primary</SButton>
@@ -45,49 +45,50 @@ export default function SButtonPage() {
         <SButton disabled>primary</SButton>
       </div>
       <CodeView content={buttonTypeStr} />
-      <h4>按钮尺寸</h4>
+      <h4>size</h4>
       <div class="flex items-center children:(mr-2 mb-2)">
         <SButton size="small">small</SButton>
         <SButton size="medium">medium</SButton>
         <SButton size="large">large</SButton>
       </div>
       <CodeView content={buttonSizeStr} />
-      <h4>按钮形状</h4>
+      <h4>shape</h4>
       <div class="flex items-center children:(mr-2 mb-2)">
-        <SButton round>round</SButton>
-        <SButton circle>C</SButton>
+        <SButton shape="default">default</SButton>
+        <SButton shape="round">round</SButton>
+        <SButton shape="circle">C</SButton>
       </div>
       <CodeView content={buttonShapeStr} />
-      <h4>block按钮</h4>
+      <h4>block</h4>
       <div w-400px p-12px border border-solid border-gray-300 rounded children:mb-2>
         <SButton block>block</SButton>
         <SButton block type="primary">
           block
         </SButton>
-        <SButton block round type="primary">
+        <SButton block shape="round" type="primary">
           block
         </SButton>
       </div>
       <CodeView content={buttonBlockStr} />
-      <h4>应用-按钮组</h4>
+      <h4>usage - button group</h4>
       <div class="button-group">
         <SButton type="primary">apple</SButton>
         <SButton type="primary">pear</SButton>
         <SButton type="primary">banana</SButton>
       </div>
       <div class="button-group">
-        <SButton type="primary" round>
+        <SButton type="primary" shape="round">
           apple
         </SButton>
-        <SButton type="primary" round>
+        <SButton type="primary" shape="round">
           pear
         </SButton>
-        <SButton type="primary" round>
+        <SButton type="primary" shape="round">
           banana
         </SButton>
       </div>
       <CodeView content={buttonGroupStr} />
-      <h4>应用-带有图标按钮</h4>
+      <h4>usage - button with icon</h4>
       <div class="flex items-center children:(mr-2 mb-2)">
         <SButton type="primary">
           <SIcon name="add-circle-line" size="16px" />

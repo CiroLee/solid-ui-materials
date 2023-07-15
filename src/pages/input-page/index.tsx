@@ -38,30 +38,26 @@ export default function InputPage() {
           <SourceLink path="SIcon" name="source" />
         </div>
       </div>
-      <p text-gray>
+      <p text-sub>
         depend on{' '}
-        <A
-          class="text-blue decoration-none"
-          activeClass="text-blue-600"
-          inactiveClass="text-blue-600"
-          href="/components/icon">
+        <A class="text-blue-600" href="/components/icon">
           SIcon
         </A>
       </p>
-      <h4>基本使用</h4>
+      <h4>basic</h4>
       <div w-540px>
         <p>value: {inputValue1()}</p>
         <SInput value={inputValue1()} placeholder="input sth..." onChange={setInputValue1} />
       </div>
       <CodeView content={baseUseStr} />
-      <h4>不同尺寸</h4>
+      <h4>size</h4>
       <div w-540px children:mb-3>
         <SInput size="small" placeholder="small size" />
         <SInput size="medium" placeholder="medium size" />
         <SInput size="large" placeholder="large size" />
       </div>
       <CodeView content={sizeStr} />
-      <h4>前缀和后缀</h4>
+      <h4>prefix and suffix</h4>
       <div w-540px children:mb-3>
         <SInput placeholder="prefix icon" prefix={<SIcon name="user-line" color="gray" />} />
         <SInput placeholder="suffix icon" suffix={<SIcon name="search-line" color="gray" />} />
@@ -72,7 +68,7 @@ export default function InputPage() {
         />
       </div>
       <CodeView content={preSuffixStr} />
-      <h4>不同状态</h4>
+      <h4>status</h4>
       <div w-540px children:mb-3>
         <SInput status="warn" placeholder="warn" prefix={<SIcon name="shield-keyhole-line" />} />
         <SInput status="error" placeholder="error" prefix={<SIcon name="shield-keyhole-line" />} />
@@ -86,12 +82,12 @@ export default function InputPage() {
         <SInput readonly value="readonly" />
       </div>
       <CodeView content={statusStr} />
-      <h4>可清除</h4>
+      <h4>allow clear</h4>
       <div w-540px>
         <SInput clearable placeholder="input sth..." value={inputValue2()} onChange={setInputValue2} />
       </div>
       <CodeView content={clearStr} />
-      <h4>显示计数</h4>
+      <h4>show count</h4>
       <div w-540px>
         <SInput
           showCount
@@ -103,7 +99,7 @@ export default function InputPage() {
         />
       </div>
       <CodeView content={countStr} />
-      <h4>密码</h4>
+      <h4>password</h4>
       <div w-540px>
         <SInput type="password" />
       </div>

@@ -4,8 +4,7 @@ interface SButtonProps {
   class?: string;
   type?: 'default' | 'primary' | 'success' | 'warn' | 'danger' | 'text';
   size?: 'small' | 'medium' | 'large';
-  round?: boolean;
-  circle?: boolean;
+  shape?: 'round' | 'square' | 'circle' | 'default';
   disabled?: boolean;
   block?: boolean;
   loading?: boolean;
@@ -18,6 +17,7 @@ const SButton: Component<SButtonProps> = (props) => {
     {
       size: 'medium',
       type: 'default',
+      shape: 'default',
       class: '',
       style: {},
     },
@@ -31,9 +31,10 @@ const SButton: Component<SButtonProps> = (props) => {
       tabindex="0"
       disabled={props.disabled}
       class={`s-button s-button--${merged.size} s-button--${merged.type}
-       ${merged.loading ? 's-button--loading' : ''} ${merged.round ? 's-button--round' : ''} ${
-         merged.circle ? 's-button--circle' : ''
-       } ${merged.block ? 's-button--block' : ''} ${merged.class}`
+       ${merged.loading ? 's-button--loading' : ''} 
+       ${merged.block ? 's-button--block' : ''} 
+       s-button--${merged.shape}
+       ${merged.class}`
         .replace(/\s{2,}/g, ' ')
         .trim()}
       style={merged.style}

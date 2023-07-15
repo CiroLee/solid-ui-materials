@@ -22,3 +22,22 @@ const App: Component = () => {
 
 export default App;
 ```
+
+```scss
+// button-icon.scss
+.button-loading {
+  opacity: 0.6;
+  i {
+    animation: loading 0.8s linear infinite;
+  }
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+```

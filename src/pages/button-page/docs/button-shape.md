@@ -4,8 +4,9 @@ import SButton from 'your path';
 const App: Component = () => {
   return (
     <div>
-      <SButton round>round</SButton>
-      <SButton circle>C</SButton>
+      <SButton shape="default">default</SButton>
+      <SButton shape="round">round</SButton>
+      <SButton shape="circle">C</SButton>
     </div>
   );
 };

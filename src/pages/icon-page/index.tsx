@@ -1,4 +1,5 @@
 import { createSignal } from 'solid-js';
+import { A } from '@solidjs/router';
 import CodeDrawer from '@/business/CodeDrawer';
 import SIcon from '@/components/SIcon';
 import SourceLink from '@/business/SourceLink';
@@ -28,18 +29,18 @@ export default function SIconPage() {
           <SourceLink path="SIcon" name="source" />
         </div>
       </div>
-      <span text-sub>based on</span>
-      <a text-14px text-blue-600 ml-1 href="https://github.com/Remix-Design/RemixIcon" target="-blank">
+      <span text-sub>icon based on</span>
+      <A class="text-blue-600 ml-1" href="https://github.com/Remix-Design/RemixIcon" target="_blank">
         Remixicon
-      </a>
-      <h4>图标尺寸</h4>
+      </A>
+      <h4>size</h4>
       <div class="children:mr-2">
         <SIcon name="home-smile-2-line" />
         <SIcon name="home-smile-2-line" size="24px" />
         <SIcon name="home-smile-2-line" size="32px" />
       </div>
       <CodeView content={iconSizeFStr} />
-      <h4>图标颜色(支持渐变色)</h4>
+      <h4>color(support gradient)</h4>
       <div class="children:mr-2">
         <SIcon name="home-smile-2-fill" size="32px" color="blue" />
         <SIcon name="home-smile-2-fill" size="32px" color="red" />
