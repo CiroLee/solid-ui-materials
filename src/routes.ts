@@ -72,6 +72,15 @@ const routes: RouteConfig[] = [
           visible: true,
         },
       },
+      {
+        path: 'switch',
+        component: lazy(() => import('./pages/switch-page')),
+        meta: {
+          name: 'Switch',
+          key: 'switch',
+          visible: true,
+        },
+      },
     ],
   },
 

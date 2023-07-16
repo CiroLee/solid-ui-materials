@@ -26,6 +26,7 @@ const SButton: Component<SButtonProps> = (props) => {
   const onClickHandler = () => {
     props.onClick && props.onClick();
   };
+
   return (
     <button
       tabindex="0"
@@ -33,7 +34,7 @@ const SButton: Component<SButtonProps> = (props) => {
       class={`s-button s-button--${merged.size} s-button--${merged.type}
        ${merged.loading ? 's-button--loading' : ''} 
        ${merged.block ? 's-button--block' : ''} 
-       s-button--${merged.shape}
+       s-button--shape-${merged.shape}
        ${merged.class}`
         .replace(/\s{2,}/g, ' ')
         .trim()}
