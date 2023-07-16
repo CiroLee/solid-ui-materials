@@ -10,6 +10,7 @@ $trans-duration: 0.2s;
 $padding: 2px;
 
 // color variables
+$primary-color-200: #d7b6fd;
 $primary-color-500: #8749f5;
 $unchecked-color: #c9c8c8;
 $unchecked-hover-color: #cfcece;
@@ -34,11 +35,15 @@ $unchecked-disabled-color: #e4e0e0;
   align-items: center;
   position: relative;
   padding: $padding;
+  outline: 0;
   box-sizing: border-box;
   cursor: pointer;
   background-color: $unchecked-color;
   transition: background-color $trans-duration;
-  &:has(input:disabled, input:checked)[class] {
+  &:not(:has(input:disabled)):focus-visible {
+    box-shadow: 0 0 0 2px $primary-color-200;
+  }
+  &:has(input:disabled)[class] {
     background-color: rgb($primary-color-500, 0.7);
     cursor: not-allowed;
   }

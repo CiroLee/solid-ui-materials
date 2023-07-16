@@ -41,7 +41,7 @@ $animate-duration: 0.25s;
     }
     &.top {
       top: 0;
-      transform: translateY(calc(-100%));
+      transform: translateY(-100%);
     }
     &.left,
     &.right {
