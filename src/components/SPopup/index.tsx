@@ -55,8 +55,8 @@ const SPopup: Component<PopupProps> = (props) => {
       <div class="s-popup">
         <div
           ref={maskRef}
-          class={`s-popup__mask ${props.isBlur ? 's-popup__mask--blur' : ''}`.replace(/\s{2,}/g, ' ').trim()}
-          classList={{ show: visibleAnimate() }}
+          class="s-popup__mask"
+          classList={{ show: visibleAnimate(), 's-popup__mask--blur': props.isBlur }}
           onClick={maskClick}
         />
         <div
