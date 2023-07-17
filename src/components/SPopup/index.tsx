@@ -21,6 +21,12 @@ const SPopup: Component<PopupProps> = (props) => {
     props?.onCancel?.();
   };
 
+  const transitionendHandler = () => {
+    if (!visibleAnimate() && readyToHidden()) {
+      setEndHidden(true);
+    }
+  };
+
   // ready to hidden
   createEffect(() => {
     if (props.show) {
@@ -36,20 +42,12 @@ const SPopup: Component<PopupProps> = (props) => {
   // listen the end of transition
   createEffect(() => {
     if (props.show) {
-      maskRef &&
-        maskRef.addEventListener('transitionend', function () {
-          if (!visibleAnimate() && readyToHidden()) {
-            setEndHidden(true);
-          }
-        });
+      maskRef && maskRef.addEventListener('transitionend', transitionendHandler);
     }
   });
 
   onCleanup(() => {
-    maskRef &&
-      maskRef.removeEventListener('transitionend', function () {
-        // console.log('unmounted');
-      });
+    maskRef && maskRef.removeEventListener('transitionend', transitionendHandler);
   });
 
   return (
