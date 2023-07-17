@@ -12,12 +12,12 @@ interface PopupProps {
 const SPopup: Component<PopupProps> = (props) => {
   let maskRef: HTMLDivElement | undefined;
   let contentRef: HTMLDivElement | undefined;
-  const [visibleAni, setVisibleAni] = createSignal(false);
+  const [visibleAnimate, setVisibleAnimate] = createSignal(false);
   const [readyToHidden, setReadyToHidden] = createSignal(false);
   const [endHidden, setEndHidden] = createSignal(true);
   const maskClick = () => {
     if (!props.maskClosable) return;
-    setVisibleAni(false);
+    setVisibleAnimate(false);
     props?.onCancel?.();
   };
 
@@ -29,7 +29,7 @@ const SPopup: Component<PopupProps> = (props) => {
     }
     // to async
     setTimeout(() => {
-      setVisibleAni(props.show);
+      setVisibleAnimate(props.show);
     }, 0);
   });
 
@@ -38,7 +38,7 @@ const SPopup: Component<PopupProps> = (props) => {
     if (props.show) {
       maskRef &&
         maskRef.addEventListener('transitionend', function () {
-          if (!visibleAni() && readyToHidden()) {
+          if (!visibleAnimate() && readyToHidden()) {
             setEndHidden(true);
           }
         });
@@ -58,13 +58,13 @@ const SPopup: Component<PopupProps> = (props) => {
         <div
           ref={maskRef}
           class={`s-popup__mask ${props.isBlur ? 's-popup__mask--blur' : ''}`.replace(/\s{2,}/g, ' ').trim()}
-          classList={{ show: visibleAni() }}
+          classList={{ show: visibleAnimate() }}
           onClick={maskClick}
         />
         <div
           ref={contentRef}
           class={`s-popup__content ${props.placement || 'center'}`}
-          classList={{ show: visibleAni() }}>
+          classList={{ show: visibleAnimate() }}>
           {props.children}
         </div>
       </div>
