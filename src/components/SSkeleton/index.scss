@@ -1,0 +1,31 @@
+$skeleton-flicker: linear-gradient(90deg, rgb(0 0 0 / 5%) 20%, rgb(0 0 0 / 8%) 40%, rgb(0 0 0 / 5%) 60%);
+$skeleton-shimmer: rgb(0 0 0 / 5%);
+$animate-duration: 2s;
+
+.s-skeleton {
+  position: relative;
+  &--flicker {
+    background-image: $skeleton-flicker;
+    background-size: 400% 100%;
+    animation: flicker $animate-duration infinite ease;
+  }
+  &--shimmer {
+    animation: shimmer $animate-duration infinite linear;
+    background-color: $skeleton-shimmer;
+  }
+}
+
+@keyframes shimmer {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes flicker {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
