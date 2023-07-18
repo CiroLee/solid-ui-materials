@@ -5,6 +5,7 @@ import SButton from '@/components/SButton';
 import CodeView from '@/business/CodeView';
 import CodeDrawer from '@/business/CodeDrawer';
 import { html as buttonTypeStr } from './docs/button-type.md';
+import { html as outlineStr } from './docs/button-outline.md';
 import { html as buttonSizeStr } from './docs/button-size.md';
 import { html as buttonShapeStr } from './docs/button-shape.md';
 import { html as buttonBlockStr } from './docs/button-block.md';
@@ -36,7 +37,6 @@ export default function SButtonPage() {
       </div>
       <h4>button type</h4>
       <div class="children:(mr-2 mb-2)">
-        <SButton type="default">default</SButton>
         <SButton type="primary">primary</SButton>
         <SButton type="success">success</SButton>
         <SButton type="warn">warn</SButton>
@@ -45,8 +45,25 @@ export default function SButtonPage() {
         <SButton disabled>primary</SButton>
       </div>
       <CodeView content={buttonTypeStr} />
+      <h4>outline</h4>
+      <div class="children:(mr-2 mb-2)">
+        <SButton outline type="primary">
+          primary
+        </SButton>
+        <SButton outline type="success">
+          success
+        </SButton>
+        <SButton outline type="warn">
+          warn
+        </SButton>
+        <SButton outline type="danger">
+          danger
+        </SButton>
+      </div>
+      <CodeView content={outlineStr} />
       <h4>size</h4>
       <div class="flex items-center children:(mr-2 mb-2)">
+        <SButton size="tiny">tiny</SButton>
         <SButton size="small">small</SButton>
         <SButton size="medium">medium</SButton>
         <SButton size="large">large</SButton>
@@ -61,7 +78,9 @@ export default function SButtonPage() {
       <CodeView content={buttonShapeStr} />
       <h4>block</h4>
       <div w-400px p-12px border border-solid border-gray-300 rounded children:mb-2>
-        <SButton block>block</SButton>
+        <SButton outline block>
+          block
+        </SButton>
         <SButton block type="primary">
           block
         </SButton>

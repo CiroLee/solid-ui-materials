@@ -4,14 +4,17 @@ import SButton from 'your path';
 const App: Component = () => {
   return (
     <div>
-      <SButton outline block>
-        block
+      <SButton outline type="primary">
+        primary
       </SButton>
-      <SButton block type="primary">
-        block
+      <SButton outline type="success">
+        success
       </SButton>
-      <SButton block round type="primary">
-        block
+      <SButton outline type="warn">
+        warn
+      </SButton>
+      <SButton outline type="danger">
+        danger
       </SButton>
     </div>
   );

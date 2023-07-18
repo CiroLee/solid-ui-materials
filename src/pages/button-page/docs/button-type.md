@@ -4,7 +4,6 @@ import SButton from 'your path';
 const App: Component = () => {
   return (
     <div>
-      <SButton type="default">default</SButton>
       <SButton type="primary">primary</SButton>
       <SButton type="success">success</SButton>
       <SButton type="warn">warn</SButton>

@@ -1,12 +1,13 @@
+/* stylelint-disable no-descending-specificity */
 // color variables
 $primary-color-200: #bf91fd;
 $primary-color-400: #a976f9;
 $primary-color-500: #8749f6;
 $primary-color-600: #6735d2;
 $success-color-200: #b7f764;
-$success-color-400: #99ef3e;
-$success-color-500: #6be503;
-$success-color-600: #51c402;
+$success-color-400: #5fee3b;
+$success-color-500: #1ce400;
+$success-color-600: #08c400;
 $warn-color-200: #ffda8c;
 $warn-color-400: #fecb70;
 $warn-color-500: #ffb343;
@@ -17,33 +18,49 @@ $danger-color-500: #f94141;
 $danger-color-600: #d72f3e;
 
 // attribute variables
-$default-border-color: #dbdbdb;
+$outline-border-color: #dbdbdb;
 $text-hover-bg-color: #ededed;
 $text-active-bg-color: #d9d9d9;
 $border-radius: 4px;
 $trans-duration: 0.15s;
 $disabled-color: #bababa;
 $disabled-bg: #ebebeb;
+$tiny-padding-x: 10px;
 $small-padding-x: 16px;
 $medium-padding-x: 20px;
 $large-padding-x: 24px;
+$tiny-height: 28px;
 $small-height: 32px;
 $medium-height: 40px;
 $large-height: 48px;
 
 // scss mixin
-@mixin s-button($bg, $active-bg, $hover-bg, $focus-color) {
-  border: 0;
-  background-color: $bg;
+@mixin s-button($main, $active-bg, $hover-bg, $focus-color) {
+  border-width: 0;
+  background-color: $main;
   color: #fff;
   &:focus-visible {
     box-shadow: 0 0 0 2px $focus-color;
   }
-  &:active:not(:disabled, .s-button--loading) {
+  &:active:not(:disabled, .s-button--loading, .s-button--outline) {
     background-color: $active-bg;
   }
-  &:hover:not(:disabled, :active, .s-button--loading) {
+  &:hover:not(:disabled, :active, .s-button--loading, .s-button--outline) {
     background-color: $hover-bg;
+  }
+  &:where(.s-button--outline) {
+    border-width: 1px;
+    background-color: unset;
+    border-color: $main;
+    color: $main;
+    &:hover {
+      border-color: $hover-bg;
+      color: $hover-bg;
+    }
+    &:active {
+      border-color: $active-bg;
+      color: $active-bg;
+    }
   }
 }
 
@@ -88,16 +105,9 @@ $large-height: 48px;
   }
 }
 
-.s-button--default[class] {
-  border: 1px solid $default-border-color;
-  &:active:not(:disabled, .s-button--loading) {
-    border-color: $primary-color-600;
-    color: $primary-color-600;
-  }
-  &:hover:not(:disabled, :active, .s-button--loading) {
-    border-color: $primary-color-400;
-    color: $primary-color-400;
-  }
+.s-button--outline {
+  border-width: 1px;
+  border-style: solid;
 }
 
 .s-button--text[class] {
@@ -124,6 +134,20 @@ $large-height: 48px;
 
 .s-button--danger[class] {
   @include s-button($danger-color-500, $danger-color-600, $danger-color-400, $danger-color-200);
+}
+
+.s-button--tiny {
+  height: $tiny-height;
+  padding: 0 $tiny-padding-x;
+  font-size: 14px;
+  .s-button--shape-round {
+    border-radius: calc($tiny-height / 2);
+  }
+  .s-button--shape-circle {
+    width: $tiny-height;
+    height: $tiny-height;
+    border-radius: 50%;
+  }
 }
 
 .s-button--small {
