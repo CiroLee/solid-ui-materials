@@ -1,19 +1,37 @@
+import { createSignal } from 'solid-js';
 import SAlert from '@/components/SAlert';
-import SourceLink from '@/business/SourceLink';
 import SIcon from '@/components/SIcon';
 import SButton from '@/components/SButton';
+import CodeDrawer from '@/business/CodeDrawer';
+import CodeView from '@/business/CodeView';
+import SourceLink from '@/business/SourceLink';
 import { A } from '@solidjs/router';
+import { html as baseStr } from './docs/base.md';
+import { html as typeStr } from './docs/type.md';
+import { html as widthIconStr } from './docs/icon.md';
+import { html as actionStr } from './docs/action.md';
 
 export default function AlertPage() {
+  const tabs = [
+    {
+      name: 'tsx',
+      path: 'components/SAlert/index.tsx',
+    },
+    {
+      name: 'scss',
+      path: 'components/SAlert/index.scss',
+    },
+  ];
+  const [showCodeDrawer, setShowCodeDrawer] = createSignal(false);
   return (
     <>
       <div flex items-center justify-between>
         <h3>SAlert</h3>
         <div>
-          <span hover:text-blue-600 text-gray cursor-pointer mr-4>
+          <span hover:text-blue-600 text-gray cursor-pointer mr-4 onClick={() => setShowCodeDrawer(true)}>
             code
           </span>
-          <SourceLink path="SAvatar" name="source" />
+          <SourceLink path="SAlert" name="source" />
         </div>
       </div>
       <p text-sub>
@@ -24,6 +42,7 @@ export default function AlertPage() {
       </p>
       <h4>basic</h4>
       <SAlert type="info" description="information text" />
+      <CodeView content={baseStr} />
       <h4>type</h4>
       <div class="children:mb-3">
         <SAlert type="info" description="information text" />
@@ -31,6 +50,7 @@ export default function AlertPage() {
         <SAlert type="warn" description="warn text" />
         <SAlert type="error" description="error text" />
       </div>
+      <CodeView content={typeStr} />
       <h4>with icon</h4>
       <div class="children:mb-3">
         <SAlert showIcon type="info" title="notice title" description="information text, describe something you need" />
@@ -38,6 +58,7 @@ export default function AlertPage() {
         <SAlert showIcon type="warn" title="warn title" description="warn text, describe something you need" />
         <SAlert showIcon type="error" title="error title" description="error text, describe something you need" />
       </div>
+      <CodeView content={widthIconStr} />
       <h4>custom action</h4>
       <div class="children:mb-3">
         <SAlert
@@ -58,6 +79,8 @@ export default function AlertPage() {
           }
         />
       </div>
+      <CodeView content={actionStr} />
+      <CodeDrawer show={showCodeDrawer()} tabs={tabs} onCancel={() => setShowCodeDrawer(false)} />
     </>
   );
 }
