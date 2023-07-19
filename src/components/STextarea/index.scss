@@ -5,8 +5,8 @@ $primary-color-500: #8749f6;
 $primary-color-100: #ebdafe;
 $warn-color-500: #ffb343;
 $warn-color-100: #fff6d9;
-$error-color-500: #f94141;
-$error-color-100: #fee7d9;
+$danger-color-500: #f94141;
+$danger-color-100: #fee7d9;
 
 // attribute variables
 $default-border-color: #dbdbdb;
@@ -24,6 +24,7 @@ $fix-color: #c2c2c2;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  color: #333;
   textarea {
     border: 1px solid $default-border-color;
     border-radius: $border-radius;
@@ -73,13 +74,13 @@ $fix-color: #c2c2c2;
 
 .s-textarea--error {
   textarea {
-    border-color: $error-color-500;
+    border-color: $danger-color-500;
     &:not(:disabled, :read-only):where(:focus, :focus-within, :focus-visible) {
-      border-color: $error-color-500;
-      box-shadow: 0 0 0 2px $error-color-100;
+      border-color: $danger-color-500;
+      box-shadow: 0 0 0 2px $danger-color-100;
     }
     &:not(:disabled, :read-only):hover {
-      border-color: $error-color-500;
+      border-color: $danger-color-500;
     }
   }
 }

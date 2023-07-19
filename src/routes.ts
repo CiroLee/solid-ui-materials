@@ -90,6 +90,15 @@ const routes: RouteConfig[] = [
           visible: true,
         },
       },
+      {
+        path: 'alert',
+        component: lazy(() => import('./pages/alert-page')),
+        meta: {
+          name: 'Alert',
+          key: 'alert',
+          visible: true,
+        },
+      },
     ],
   },
 

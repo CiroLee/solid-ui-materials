@@ -1,0 +1,62 @@
+// color variables
+$primary-color-50: #f5ecfe;
+$primary-color-200: #d7b6fd;
+$primary-color-500: #8749f5;
+$success-color-50: #f4feeb;
+$success-color-200: #bbfc97;
+$success-color-500: #1ce400;
+$warn-color-50: #fffaeb;
+$warn-color-200: #fee9b2;
+$warn-color-500: #ffb343;
+$danger-color-50: #ffeceb;
+$danger-color-200: #ffc6b3;
+$danger-color-500: #f94141;
+$padding: 12px;
+$border-radius: 4px;
+
+@mixin s-alert($bg, $border-color, $icon-color) {
+  background-color: $bg;
+  border-color: $border-color;
+  .s-alert__prefix {
+    color: $icon-color;
+  }
+}
+
+.s-alert {
+  position: relative;
+  padding: $padding;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: $border-radius;
+  box-sizing: border-box;
+  display: flex;
+  color: #333;
+  &__prefix {
+    margin-right: 8px;
+  }
+  &__content {
+    flex: 1;
+    &:not(:first-child, :last-child) {
+      margin-right: 8px;
+    }
+  }
+  &__title {
+    font-weight: bold;
+  }
+}
+
+.s-alert--info {
+  @include s-alert($primary-color-50, $primary-color-200, $primary-color-500);
+}
+
+.s-alert--success {
+  @include s-alert($success-color-50, $success-color-200, $success-color-500);
+}
+
+.s-alert--warn {
+  @include s-alert($warn-color-50, $warn-color-200, $warn-color-500);
+}
+
+.s-alert--error {
+  @include s-alert($danger-color-50, $danger-color-200, $danger-color-500);
+}
