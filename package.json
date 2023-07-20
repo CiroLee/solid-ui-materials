@@ -1,7 +1,7 @@
 {
   "name": "solid-ui-material",
   "version": "0.0.0",
-  "description": "",
+  "description": "high re-usable components based on solid-js",
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
