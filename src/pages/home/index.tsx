@@ -6,13 +6,13 @@ const Home: Component = () => {
   return (
     <div class={style.home} h-full flex flex-col flex-center>
       <div class={style['slogan']}>
-        <p class="flex items-center">
+        <p class="flex items-center flex-wrap">
           <span font-bold text-32px>
             No
           </span>
           <span class={style['inline-code']}>install</span>
         </p>
-        <p class="flex items-center">
+        <p class="flex items-center flex-wrap">
           <span font-bold text-32px>
             Zero
           </span>
@@ -27,7 +27,7 @@ const Home: Component = () => {
             )
           </span>
         </p>
-        <p class="flex items-center">
+        <p class="flex items-center flex-wrap">
           <span font-bold text-32px>
             Hight
           </span>
@@ -40,7 +40,7 @@ const Home: Component = () => {
           <span ml-1>to</span>
           <span class={style['inline-code']}>modify</span>
         </div>
-        <p class="flex items-center">
+        <p class="flex items-center flex-wrap">
           <span font-bold text-32px>
             Just
           </span>
