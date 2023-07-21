@@ -1,7 +1,7 @@
 ```ts
 import { type Component } from 'solid-js';
 import SAlert from 'your path';
-import SIcon from 'your path';
+import SButton from 'your path';
 const App: Component = () => {
   return (
     <div>
