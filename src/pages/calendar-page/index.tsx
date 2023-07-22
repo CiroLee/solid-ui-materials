@@ -44,7 +44,7 @@ export default function CalendarPage() {
   ];
   const [showCodeDrawer, setShowCodeDrawer] = createSignal(false);
   const [date1, setDate1] = createSignal(new Date());
-  const [date2, setDate2] = createSignal<Date>(new Date('2023-7-1'));
+  const [date2, setDate2] = createSignal<Date>(new Date('2023/7/1'));
   const [startWeekOnSunday, setStartWeekOnSunday] = createSignal(true);
   const dateChangeHandler = (type: 'prev' | 'next') => {
     const newDate = new Date(date2());
