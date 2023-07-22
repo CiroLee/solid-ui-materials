@@ -14,11 +14,11 @@ import { html as actionStr } from './docs/action.md';
 export default function AlertPage() {
   const tabs = [
     {
-      name: 'tsx',
+      name: 'index.tsx',
       path: 'components/SAlert/index.tsx',
     },
     {
-      name: 'scss',
+      name: 'index.scss',
       path: 'components/SAlert/index.scss',
     },
   ];

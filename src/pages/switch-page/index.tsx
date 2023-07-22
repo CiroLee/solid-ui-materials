@@ -9,11 +9,11 @@ import { html as disabledStr } from './docs/disabled.md';
 export default function SwitchPage() {
   const tabs = [
     {
-      name: 'tsx',
+      name: 'index.tsx',
       path: 'components/SSwitch/index.tsx',
     },
     {
-      name: 'scss',
+      name: 'index.scss',
       path: 'components/SSwitch/index.scss',
     },
   ];

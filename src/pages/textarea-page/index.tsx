@@ -13,11 +13,11 @@ import { html as statusStr } from './docs/status.md';
 export default function TextareaPage() {
   const tabs = [
     {
-      name: 'tsx',
+      name: 'index.tsx',
       path: 'components/STextarea/index.tsx',
     },
     {
-      name: 'scss',
+      name: 'index.scss',
       path: 'components/STextarea/index.scss',
     },
   ];

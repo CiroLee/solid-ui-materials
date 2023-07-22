@@ -15,11 +15,11 @@ import './button-page.scss';
 export default function SButtonPage() {
   const tabs = [
     {
-      name: 'tsx',
+      name: 'index.tsx',
       path: 'components/SButton/index.tsx',
     },
     {
-      name: 'scss',
+      name: 'index.scss',
       path: 'components/SButton/index.scss',
     },
   ];

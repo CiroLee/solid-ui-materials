@@ -15,11 +15,11 @@ import SourceLink from '@/business/SourceLink';
 export default function InputPage() {
   const tabs = [
     {
-      name: 'tsx',
+      name: 'index.tsx',
       path: 'components/SInput/index.tsx',
     },
     {
-      name: 'scss',
+      name: 'index.scss',
       path: 'components/SInput/index.scss',
     },
   ];

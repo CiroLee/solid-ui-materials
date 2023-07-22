@@ -11,11 +11,11 @@ import './popup.scss';
 export default function PopupPage() {
   const tabs = [
     {
-      name: 'tsx',
+      name: 'index.tsx',
       path: 'components/SPopup/index.tsx',
     },
     {
-      name: 'scss',
+      name: 'index.scss',
       path: 'components/SPopup/index.scss',
     },
   ];

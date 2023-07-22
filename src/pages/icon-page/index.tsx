@@ -9,11 +9,11 @@ import { html as iconColorFStr } from './docs/icon-color.md';
 export default function SIconPage() {
   const tabs = [
     {
-      name: 'tsx',
+      name: 'index.tsx',
       path: 'components/SIcon/index.tsx',
     },
     {
-      name: 'scss',
+      name: 'index.scss',
       path: 'components/SIcon/index.scss',
     },
   ];

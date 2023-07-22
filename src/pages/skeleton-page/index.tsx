@@ -9,11 +9,11 @@ import './skeleton.scss';
 export default function SkeletonPage() {
   const tabs = [
     {
-      name: 'tsx',
+      name: 'index.tsx',
       path: 'components/SSkeleton/index.tsx',
     },
     {
-      name: 'scss',
+      name: 'index.scss',
       path: 'components/SSkeleton/index.scss',
     },
   ];

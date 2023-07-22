@@ -13,11 +13,11 @@ const avatarUrl = 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?
 export default function AvatarPage() {
   const tabs = [
     {
-      name: 'tsx',
+      name: 'index.tsx',
       path: 'components/SAvatar/index.tsx',
     },
     {
-      name: 'scss',
+      name: 'index.scss',
       path: 'components/SAvatar/index.scss',
     },
   ];
