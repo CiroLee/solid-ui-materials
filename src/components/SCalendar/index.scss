@@ -1,0 +1,64 @@
+$border-color: #dbdbdb;
+$not-current: #c1c0c0;
+$item-hover-color: #f5f5f5;
+$primary-color-500: #8749f5;
+$week-bar-height: 32px;
+$padding: 20px;
+$item-padding: 10px;
+$item-border-radius: 2px;
+$border-radius: 4px;
+$date-box-size: 28px;
+
+.s-calendar {
+  position: relative;
+  padding: $padding;
+  border-radius: $border-radius;
+  border: 1px solid $border-color;
+  li {
+    list-style: none;
+    padding-right: $item-padding;
+  }
+  &__week-bar {
+    display: flex;
+    align-items: center;
+    height: $week-bar-height;
+    li {
+      flex: 1;
+      display: inline-block;
+      text-align: right;
+    }
+  }
+  &__body {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+  &__body-item {
+    aspect-ratio: 1;
+    text-align: right;
+    padding: $item-padding;
+    border-radius: $item-border-radius;
+    cursor: pointer;
+    span {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: $date-box-size;
+      height: $date-box-size;
+      border-radius: 50%;
+    }
+    &.not-current-month {
+      color: $not-current;
+    }
+    &.active {
+      span {
+        background-color: $primary-color-500;
+        color: #fff;
+      }
+    }
+    &:hover {
+      background-color: $item-hover-color;
+    }
+  }
+}

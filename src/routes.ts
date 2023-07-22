@@ -99,6 +99,15 @@ const routes: RouteConfig[] = [
           visible: true,
         },
       },
+      {
+        path: 'calendar',
+        component: lazy(() => import('./pages/calendar-page')),
+        meta: {
+          name: 'Calendar',
+          key: 'calendar',
+          visible: true,
+        },
+      },
     ],
   },
 

@@ -97,11 +97,16 @@ $large-height: 48px;
   &--shape-round {
     border-radius: calc($medium-height / 2);
   }
-  &--shape-circle {
+  &--shape-circle[class] {
     padding: 0;
     width: $medium-height;
     height: $medium-height;
     border-radius: 50%;
+  }
+  &--shape-square[class] {
+    padding: 0;
+    width: $medium-height;
+    height: $medium-height;
   }
 }
 
@@ -140,13 +145,17 @@ $large-height: 48px;
   height: $tiny-height;
   padding: 0 $tiny-padding-x;
   font-size: 14px;
-  .s-button--shape-round {
+  &.s-button--shape-round {
     border-radius: calc($tiny-height / 2);
   }
-  .s-button--shape-circle {
+  &.s-button--shape-circle {
     width: $tiny-height;
     height: $tiny-height;
     border-radius: 50%;
+  }
+  &.s-button--shape-square {
+    width: $tiny-height;
+    height: $tiny-height;
   }
 }
 
@@ -154,13 +163,17 @@ $large-height: 48px;
   height: $small-height;
   padding: 0 $small-padding-x;
   font-size: 14px;
-  .s-button--shape-round {
+  &.s-button--shape-round {
     border-radius: calc($small-height / 2);
   }
-  .s-button--shape-circle {
+  &.s-button--shape-circle {
     width: $small-height;
     height: $small-height;
     border-radius: 50%;
+  }
+  &.s-button--shape-square {
+    width: $small-height;
+    height: $small-height;
   }
 }
 
@@ -168,13 +181,17 @@ $large-height: 48px;
   height: $large-height;
   padding: 0 $large-padding-x;
   font-size: 16px;
-  .s-button--shape-round {
+  &.s-button--shape-round {
     border-radius: calc($large-height / 2);
   }
-  .s-button--shape-circle {
+  &.s-button--shape-circle {
     width: $large-height;
     height: $large-height;
     border-radius: 50%;
+  }
+  &.s-button--shape-square {
+    width: $large-height;
+    height: $large-height;
   }
 }
 

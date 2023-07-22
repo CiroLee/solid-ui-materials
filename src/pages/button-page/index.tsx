@@ -74,6 +74,7 @@ export default function SButtonPage() {
         <SButton shape="default">default</SButton>
         <SButton shape="round">round</SButton>
         <SButton shape="circle">C</SButton>
+        <SButton shape="square">S</SButton>
       </div>
       <CodeView content={buttonShapeStr} />
       <h4>block</h4>
