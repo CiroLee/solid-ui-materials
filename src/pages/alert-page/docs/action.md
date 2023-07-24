@@ -22,6 +22,16 @@ const App: Component = () => {
           </SButton>
         }
       />
+      <SAlert
+        showIcon
+        type="error"
+        title="Error"
+        description={
+          <div>
+            custom error description, you have <span style={{ color: 'red', 'font-weight': 'bold' }}>4</span> errors
+          </div>
+        }
+      />
     </div>
   );
 };

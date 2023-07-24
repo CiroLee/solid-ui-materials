@@ -59,23 +59,33 @@ export default function AlertPage() {
         <SAlert showIcon type="error" title="error title" description="error text, describe something you need" />
       </div>
       <CodeView content={widthIconStr} />
-      <h4>custom action</h4>
+      <h4>custom</h4>
       <div class="children:mb-3">
         <SAlert
           showIcon
-          title="system info"
+          title="custom action icon"
           description="system info, describe something you need"
           action={<SIcon name="close-line" color="gray" />}
         />
         <SAlert
           showIcon
           type="success"
-          title="success title"
+          title="custom action button"
           description="success text, describe something you need"
           action={
             <SButton type="success" size="tiny" outline>
               Done
             </SButton>
+          }
+        />
+        <SAlert
+          showIcon
+          type="error"
+          title="custom description"
+          description={
+            <div>
+              custom error description, you have <span style={{ color: 'red', 'font-weight': 'bold' }}>4</span> errors
+            </div>
           }
         />
       </div>

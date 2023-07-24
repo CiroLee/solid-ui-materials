@@ -1,16 +1,19 @@
 import { type Component, type JSX, mergeProps, Show } from 'solid-js';
 import SIcon from '../SIcon';
 import './index.scss';
+
 type AlertType = 'info' | 'success' | 'warn' | 'error';
+
 interface SAlertProps {
   type?: AlertType;
   title?: string;
-  description?: string;
+  description?: JSX.Element;
   showIcon?: boolean;
   class?: string;
   style?: JSX.CSSProperties;
   action?: JSX.Element;
 }
+
 const SAlert: Component<SAlertProps> = (props) => {
   const merged = mergeProps(
     {
