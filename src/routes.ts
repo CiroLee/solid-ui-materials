@@ -108,6 +108,15 @@ const routes: RouteConfig[] = [
           visible: true,
         },
       },
+      {
+        path: 'tabs',
+        component: lazy(() => import('./pages/tabs-page')),
+        meta: {
+          name: 'Tabs',
+          key: 'tabs',
+          visible: true,
+        },
+      },
     ],
   },
 

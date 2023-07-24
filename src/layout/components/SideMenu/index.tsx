@@ -7,7 +7,7 @@ interface SideMenuProps {
 }
 const SideMenu: Component<SideMenuProps> = (props) => {
   const components = routes.find((r) => r.path === '/components');
-  const menus = components ? components?.children?.filter((c) => c.meta?.visible) : [];
+  const menus = components ? components.children?.filter((c) => c.meta?.visible) : [];
   return (
     <div class={props.class} w-200px h-100vh overflow-hidden border="~ r-1px solid #e6e5e5" box-border p-12px>
       <A

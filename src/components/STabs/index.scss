@@ -1,0 +1,41 @@
+$tab-height: 40px;
+$border-radius: 4px;
+$tab-bg: #f2f2f2;
+$padding: 4px;
+$inactive-color: #a19f9f;
+$active-color: #333;
+$disabled-color: #cccaca;
+$trans-duration: 0.2s;
+
+.s-tabs {
+  display: flex;
+  height: $tab-height;
+  border-radius: $border-radius;
+  background-color: $tab-bg;
+  padding: $padding;
+  box-sizing: border-box;
+  position: relative;
+  &__item {
+    flex: 1;
+    position: relative;
+    font-size: 14px;
+    color: $inactive-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: calc($border-radius / 2);
+    cursor: pointer;
+    transition: all $trans-duration ease;
+  }
+  &__item--active {
+    color: $active-color;
+    background-color: #fff;
+    box-shadow: 0 1px 4px -2px rgb(0 0 0 / 20%);
+  }
+  &__item--disabled {
+    cursor: not-allowed;
+    color: $disabled-color;
+    background-color: unset;
+    box-shadow: unset;
+  }
+}
