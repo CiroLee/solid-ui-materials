@@ -9,7 +9,7 @@ const App: Component = () => {
       content: (
         <>
           <SIcon name="windows-fill" />
-          <span ml-1>window</span>
+          <span style={{ 'margin-left': '8px' }}>window</span>
         </>
       ),
     },
@@ -18,7 +18,7 @@ const App: Component = () => {
       content: (
         <>
           <SIcon name="apple-fill" />
-          <span ml-1>apple</span>
+          <span style={{ 'margin-left': '8px' }}>apple</span>
         </>
       ),
     },
@@ -27,7 +27,7 @@ const App: Component = () => {
       content: (
         <>
           <SIcon name="ubuntu-fill" />
-          <span ml-1>linux</span>
+          <span style={{ 'margin-left': '8px' }}>linux</span>
         </>
       ),
     },
