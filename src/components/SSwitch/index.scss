@@ -7,7 +7,7 @@ $medium-height: 24px;
 $large-width: 56px;
 $large-height: 28px;
 $trans-duration: 0.2s;
-$padding: 2px;
+$padding: 4px;
 
 // color variables
 $primary-color-200: #d7b6fd;
@@ -20,12 +20,14 @@ $unchecked-disabled-color: #e4e0e0;
   width: $width;
   height: $height;
   border-radius: calc($height / 2);
+
+  --gap: 6px;
   .s-switch__track {
-    width: calc($height - 4px);
-    height: calc($height - 4px);
+    width: calc($height - var(--gap));
+    height: calc($height - var(--gap));
   }
   input:checked ~ .s-switch__track {
-    transform: translateX(calc($width - $height));
+    transform: translateX(calc($width - $height + var(--gap) - 2 * $padding));
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
   }
 }
