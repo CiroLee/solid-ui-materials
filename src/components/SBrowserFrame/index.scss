@@ -1,0 +1,122 @@
+/* stylelint-disable no-descending-specificity */
+
+$border-radius: 4px;
+$header-height: 32px;
+$min-height: 320px;
+$header-padding-x: 12px;
+$icon-gap: 6px;
+$url-color: #414141;
+$border-color: #e2e2e2;
+
+.s-browser-frame {
+  min-height: $min-height;
+  border-radius: $border-radius;
+  overflow: hidden;
+  border: 1px solid $border-color;
+  position: relative;
+  &__header {
+    height: $header-height;
+    display: flex;
+    border-bottom: 1px solid $border-color;
+    padding: 0 $header-padding-x;
+    position: relative;
+    &:has(.s-browser-frame__windows--icon) {
+      justify-content: flex-end;
+    }
+  }
+  &__header--content {
+    width: calc(100% - $header-padding-x * 2);
+    position: absolute;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    a {
+      color: $url-color;
+      max-width: 40%;
+      text-decoration: none;
+      background-color: #f5f5f5;
+      padding: 0 12px;
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.s-browser-frame__control {
+  display: flex;
+  align-items: center;
+  li {
+    --size: 13px;
+
+    list-style-type: none;
+    width: var(--size);
+    height: var(--size);
+    &:not(:first-child) {
+      margin-left: $icon-gap;
+    }
+  }
+}
+
+.s-browser-frame__macos--icon {
+  li {
+    border-radius: calc(var(--size) / 2);
+    &:nth-child(1) {
+      background-color: #ff5f57;
+    }
+    &:nth-child(2) {
+      background-color: #febc2e;
+    }
+    &:nth-child(3) {
+      background-color: #28c840;
+    }
+  }
+}
+
+.s-browser-frame__windows--icon {
+  li {
+    position: relative;
+    &:not(:first-child) {
+      margin-left: calc($icon-gap + 6px);
+    }
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &:nth-child(1)::after {
+      content: '';
+      width: 80%;
+      height: 1px;
+      background-color: #7d7c7c;
+    }
+    &:nth-child(2)::after {
+      content: '';
+      width: 64%;
+      height: 64%;
+      border: 1px solid #7d7c7c;
+    }
+    &:nth-child(3) {
+      &::before {
+        content: '';
+        width: 80%;
+        height: 1px;
+        background-color: #7d7c7c;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+      &::after {
+        content: '';
+        width: 80%;
+        height: 1px;
+        background-color: #7d7c7c;
+        transform: translate(-50%, -50%) rotate(135deg);
+      }
+    }
+  }
+}

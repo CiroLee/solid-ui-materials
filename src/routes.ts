@@ -117,6 +117,15 @@ const routes: RouteConfig[] = [
           visible: true,
         },
       },
+      {
+        path: 'browserframe',
+        component: lazy(() => import('./pages/browserframe-page')),
+        meta: {
+          name: 'BrowserFrame',
+          key: 'browserframe',
+          visible: true,
+        },
+      },
     ],
   },
 
