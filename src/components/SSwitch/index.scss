@@ -1,11 +1,11 @@
 /* stylelint-disable no-descending-specificity */
 
 $small-width: 40px;
-$small-height: 20px;
+$small-height: 22px;
 $medium-width: 48px;
-$medium-height: 24px;
+$medium-height: 26px;
 $large-width: 56px;
-$large-height: 28px;
+$large-height: 30px;
 $trans-duration: 0.2s;
 $padding: 4px;
 
@@ -21,7 +21,7 @@ $unchecked-disabled-color: #e4e0e0;
   height: $height;
   border-radius: calc($height / 2);
 
-  --gap: 6px;
+  --gap: 8px;
   .s-switch__track {
     width: calc($height - var(--gap));
     height: calc($height - var(--gap));
