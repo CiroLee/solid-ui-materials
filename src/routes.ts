@@ -118,6 +118,15 @@ const routes: RouteConfig[] = [
         },
       },
       {
+        path: 'radio',
+        component: lazy(() => import('./pages/radio-page')),
+        meta: {
+          name: 'Radio',
+          key: 'radio',
+          visible: true,
+        },
+      },
+      {
         path: 'browserframe',
         component: lazy(() => import('./pages/browserframe-page')),
         meta: {

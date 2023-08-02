@@ -1,0 +1,70 @@
+/* stylelint-disable no-descending-specificity */
+$track-size: 16px;
+$unchecked-border-color: #dbdbdb;
+$unchecked-disabled-border-color: #d3d1d1;
+$unchecked-disabled-bg-color: #efecec;
+$primary-color-500: #8749f5;
+$trans-duration: 0.25s;
+
+.s-radio {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  position: relative;
+  cursor: pointer;
+  input {
+    opacity: 0;
+    position: absolute;
+    margin: 0;
+    inset: 0;
+    cursor: inherit;
+  }
+  &__track {
+    width: $track-size;
+    height: $track-size;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 1px solid $unchecked-border-color;
+    position: relative;
+    transition: all $trans-duration linear;
+  }
+  &__children {
+    margin-left: 8px;
+  }
+  input[type='radio']:checked ~ &__track {
+    border-color: $primary-color-500;
+    &::after {
+      content: '';
+      position: absolute;
+      width: calc($track-size - 7px);
+      height: calc($track-size - 7px);
+      border-radius: 50%;
+      background-color: $primary-color-500;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  input[type='radio']:not(:checked):disabled ~ &__track {
+    border-color: $unchecked-disabled-border-color;
+    background-color: $unchecked-disabled-bg-color;
+  }
+  input[type='radio']:checked:disabled ~ &__track {
+    border-color: rgb($primary-color-500, 0.4);
+    &::after {
+      background-color: rgb($primary-color-500, 0.4);
+    }
+  }
+  &:has(input[type='radio']:disabled) {
+    cursor: not-allowed;
+  }
+  &:has(input[type='radio']:not(:disabled)):hover &__track {
+    border-color: $primary-color-500;
+  }
+}
+
+.s-radio-group {
+  .s-radio:not(:first-child) {
+    margin-left: 16px;
+  }
+}
