@@ -57,6 +57,7 @@ $trans-duration: 0.25s;
   }
   &:has(input[type='radio']:disabled) {
     cursor: not-allowed;
+    color: $unchecked-disabled-border-color;
   }
   &:has(input[type='radio']:not(:disabled)):hover &__track {
     border-color: $primary-color-500;

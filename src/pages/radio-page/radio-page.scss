@@ -3,4 +3,13 @@
     align-self: flex-start;
     margin-top: 6px;
   }
+  .title {
+    font-size: 16px;
+  }
+  .price {
+    color: red;
+  }
+  &:has(input:disabled) .price {
+    color: inherit;
+  }
 }
