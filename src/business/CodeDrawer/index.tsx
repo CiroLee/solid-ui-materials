@@ -43,7 +43,7 @@ const CodeDrawer: Component<CodeDrawerProps> = (props) => {
 
   return (
     <SPopup show={props.show} maskClosable placement="right" onCancel={props.onCancel}>
-      <div flex flex-col w-440px h-full bg-white p-12px overflow-hidden box-border>
+      <div flex flex-col w-540px h-full bg-white p-12px overflow-hidden box-border>
         <div flex>
           <For each={codeData()}>
             {(tab) => (

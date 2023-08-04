@@ -11,8 +11,16 @@ import './radio-page.scss';
 export default function RadioPage() {
   const tabs = [
     {
-      name: 'index.tsx',
-      path: 'components/SRadio/index.tsx',
+      name: 'radio.tsx',
+      path: 'components/SRadio/radio.tsx',
+    },
+    {
+      name: 'group.tsx',
+      path: 'components/SRadio/group.tsx',
+    },
+    {
+      name: 'index.ts',
+      path: 'components/SRadio/index.ts',
     },
     {
       name: 'index.scss',
