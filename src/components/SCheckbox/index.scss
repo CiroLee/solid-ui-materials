@@ -1,0 +1,85 @@
+/* stylelint-disable no-descending-specificity */
+$track-size: 16px;
+$track-radius: 2px;
+$trans-duration: 0.2s;
+$unchecked-border-color: #dbdbdb;
+$unchecked-disabled-border-color: #d3d1d1;
+$unchecked-disabled-bg-color: #efecec;
+$primary-color-500: #8749f5;
+
+.s-checkbox {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  position: relative;
+  cursor: pointer;
+  input {
+    opacity: 0;
+    position: absolute;
+    margin: 0;
+    inset: 0;
+    cursor: inherit;
+  }
+  &__children {
+    margin-left: 8px;
+  }
+  &__track {
+    width: $track-size;
+    height: $track-size;
+    border-radius: $track-radius;
+    border: 1px solid $unchecked-border-color;
+    box-sizing: border-box;
+    position: relative;
+    transition: all $trans-duration linear;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: #fff;
+      transition: background-color $trans-duration linear;
+    }
+  }
+  input[type='checkbox']:checked ~ &__track {
+    border-color: $primary-color-500;
+    background-color: $primary-color-500;
+    &::before {
+      width: 5px;
+      height: 2px;
+      top: 48%;
+      left: 6%;
+      transform: rotate(45deg);
+    }
+    &::after {
+      width: 10px;
+      height: 2px;
+      top: 44.2%;
+      left: 25.8%;
+      transform: rotate(135deg);
+    }
+  }
+  input[type='checkbox']:not(:checked):disabled ~ &__track {
+    border-color: $unchecked-disabled-border-color;
+    background-color: $unchecked-disabled-bg-color;
+  }
+  input[type='checkbox']:checked:disabled ~ &__track {
+    border-color: rgb($primary-color-500, 0.1);
+    background-color: rgb($primary-color-500, 0.4);
+    &::after,
+    &::before {
+      background-color: rgb(#fff, 0.6);
+    }
+  }
+  &:has(input[type='checkbox']:disabled) {
+    cursor: not-allowed;
+    color: $unchecked-disabled-border-color;
+  }
+  &:has(input[type='checkbox']:not(:disabled)):hover &__track {
+    border-color: $primary-color-500;
+  }
+}
+
+.s-checkbox-group {
+  .s-checkbox:not(:first-child) {
+    margin-left: 16px;
+  }
+}

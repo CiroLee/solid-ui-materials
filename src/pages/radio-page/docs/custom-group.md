@@ -7,43 +7,43 @@ const App: Component = () => {
     {
       children: (
         <div>
-          <div class="title">iphone</div>
-          <div class="price">$1.00</div>
+          <div class="title">apple</div>
+          <div>🍎</div>
         </div>
       ),
       class: 'radio-page-custom',
-      value: 'iphone',
+      value: 'apple',
     },
     {
       children: (
         <div>
-          <div class="title">huawei</div>
-          <div class="price">$2.00</div>
+          <div class="title">banana</div>
+          <div>🍌</div>
         </div>
       ),
       class: 'radio-page-custom',
-      value: 'huawei',
+      value: 'banana',
     },
     {
       children: (
         <div>
-          <div class="title">sansung</div>
-          <div class="price">$3.00</div>
+          <div class="title">orange</div>
+          <div class="price">🍊</div>
         </div>
       ),
       class: 'radio-page-custom',
-      value: 'sansung',
+      value: 'orange',
     },
     {
       children: (
         <div>
-          <div class="title">nokia</div>
-          <div class="price">$4.00</div>
+          <div class="title">peach</div>
+          <div class="price">🍑</div>
         </div>
       ),
       disabled: true,
       class: 'radio-page-custom',
-      value: 'nokia',
+      value: 'peach',
     },
   ];
   return <SRadioGroup value={radioPhone()} options={radioGroup} onChange={setRadioPhone} />;
@@ -62,10 +62,8 @@ export default App;
   .title {
     font-size: 16px;
   }
-  .price {
-    color: red;
-  }
   &:has(input:disabled) .price {
     color: inherit;
   }
+}
 ```

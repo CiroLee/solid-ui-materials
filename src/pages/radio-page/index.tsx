@@ -1,5 +1,5 @@
 import { createSignal } from 'solid-js';
-import SRadio, { type SRadioGroupOptions, SRadioGroup } from '@/components/SRadio';
+import { type SRadioGroupOptions, SRadio, SRadioGroup } from '@/components/SRadio';
 import SourceLink from '@/business/SourceLink';
 import CodeDrawer from '@/business/CodeDrawer';
 import CodeView from '@/business/CodeView';
@@ -40,43 +40,43 @@ export default function RadioPage() {
     {
       children: (
         <div>
-          <div class="radio-page title">iphone</div>
-          <div class="radio-page price">$1.00</div>
+          <div class="title">apple</div>
+          <div>🍎</div>
         </div>
       ),
       class: 'radio-page-custom',
-      value: 'iphone',
+      value: 'apple',
     },
     {
       children: (
         <div>
-          <div class="radio-page title">huawei</div>
-          <div class="radio-page price">$2.00</div>
+          <div class="title">banana</div>
+          <div>🍌</div>
         </div>
       ),
       class: 'radio-page-custom',
-      value: 'huawei',
+      value: 'banana',
     },
     {
       children: (
         <div>
-          <div class="radio-page title">sansung</div>
-          <div class="radio-page price">$3.00</div>
+          <div class="title">orange</div>
+          <div class="price">🍊</div>
         </div>
       ),
       class: 'radio-page-custom',
-      value: 'sansung',
+      value: 'orange',
     },
     {
       children: (
         <div>
-          <div class="radio-page title">nokia</div>
-          <div class="radio-page price">$4.00</div>
+          <div class="title">peach</div>
+          <div class="price">🍑</div>
         </div>
       ),
       disabled: true,
       class: 'radio-page-custom',
-      value: 'nokia',
+      value: 'peach',
     },
   ];
   return (

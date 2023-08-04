@@ -127,6 +127,15 @@ const routes: RouteConfig[] = [
         },
       },
       {
+        path: 'checkbox',
+        component: lazy(() => import('./pages/checkbox-page')),
+        meta: {
+          name: 'Checkbox',
+          key: 'checkbox',
+          visible: true,
+        },
+      },
+      {
         path: 'browserframe',
         component: lazy(() => import('./pages/browserframe-page')),
         meta: {
