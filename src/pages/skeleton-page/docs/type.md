@@ -6,19 +6,19 @@ const App: Component = () => {
   return (
     <div>
       <h4>type: shimmer</h4>
-      <div class="card-skeleton">
-        <SSkeleton type="shimmer" class="card-skeleton__avatar" />
-        <div class="card-skeleton__content">
-          <SSkeleton type="shimmer" class="card-skeleton__item" />
-          <SSkeleton type="shimmer" class="card-skeleton__item" style={{ width: '80%' }} />
+      <div class="w-300px flex">
+        <SSkeleton type="shimmer" class="w-40px h-40px rounded-1/2" />
+        <div class="relative ml-12px flex-1 children:mb-10px">
+          <SSkeleton type="shimmer" class="h-14px rounded-4px" />
+          <SSkeleton type="shimmer" class="h-14px rounded-4px" style={{ width: '80%' }} />
         </div>
       </div>
       <h4>type: flicker</h4>
-      <div class="card-skeleton">
-        <SSkeleton type="flicker" class="card-skeleton__avatar" />
-        <div class="card-skeleton__content">
-          <SSkeleton type="flicker" class="card-skeleton__item" />
-          <SSkeleton type="flicker" class="card-skeleton__item" style={{ width: '80%' }} />
+      <div class="w-300px flex">
+        <SSkeleton type="flicker" class="w-40px h-40px rounded-1/2" />
+        <div class="relative ml-12px flex-1 children:mb-10px">
+          <SSkeleton type="flicker" class="h-14px rounded-4px" />
+          <SSkeleton type="flicker" class="h-14px rounded-4px" style={{ width: '80%' }} />
         </div>
       </div>
     </div>
@@ -26,31 +26,4 @@ const App: Component = () => {
 };
 
 export default App;
-```
-
-```scss
-// skeleton.scss
-.card-skeleton {
-  width: 300px;
-  display: flex;
-  &__avatar {
-    --size: 40px;
-
-    width: var(--size);
-    height: var(--size);
-    border-radius: 50%;
-  }
-  &__content {
-    position: relative;
-    margin-left: 12px;
-    flex: 1;
-    & > div {
-      margin-bottom: 10px;
-    }
-  }
-  &__item {
-    height: 14px;
-    border-radius: 4px;
-  }
-}
 ```

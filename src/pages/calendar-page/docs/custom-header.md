@@ -11,11 +11,11 @@ interface CustomHeaderProps {
 }
 const CustomCalendarHeader: Component<CustomHeaderProps> = (props) => {
   return (
-    <div class="custom-header">
+    <div class="mb-12px flex justify-end pb-12px border-0 border-b-1px border-solid border-#eaeaea">
       <SButton outline shape="square" size="tiny" type="primary" onClick={props.onPrevChange}>
         <SIcon name="arrow-left-s-line" size="20px" />
       </SButton>
-      <span class="custom-header__date">{props.value.toLocaleDateString()}</span>
+      <span class="mx-20px">{props.value.toLocaleDateString()}</span>
       <SButton outline shape="square" size="tiny" type="primary" onClick={props.onNextChange}>
         <SIcon name="arrow-right-s-line" size="20px" />
       </SButton>
@@ -59,18 +59,4 @@ const App: Component = () => {
 };
 
 export default App;
-```
-
-```scss
-// custom-header.scss
-.custom-header {
-  margin-bottom: 12px;
-  display: flex;
-  justify-content: flex-end;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #eaeaea;
-  &__date {
-    margin: 0 20px;
-  }
-}
 ```

@@ -8,7 +8,6 @@ import CodeDrawer from '@/business/CodeDrawer';
 import CodeView from '@/business/CodeView';
 import { html as baseStr } from './docs/base.md';
 import { html as customHeaderStr } from './docs/custom-header.md';
-import './calendar-page.scss';
 interface CustomHeaderProps {
   value: Date;
   onPrevChange: () => void;
@@ -16,11 +15,11 @@ interface CustomHeaderProps {
 }
 const CustomCalendarHeader: Component<CustomHeaderProps> = (props) => {
   return (
-    <div class="custom-header">
+    <div class="mb-12px flex justify-end pb-12px border-0 border-b-1px border-solid border-#eaeaea">
       <SButton outline shape="square" size="tiny" type="primary" onClick={props.onPrevChange}>
         <SIcon name="arrow-left-s-line" size="20px" />
       </SButton>
-      <span class="custom-header__date">{props.value.toLocaleDateString()}</span>
+      <span class="mx-20px">{props.value.toLocaleDateString()}</span>
       <SButton outline shape="square" size="tiny" type="primary" onClick={props.onNextChange}>
         <SIcon name="arrow-right-s-line" size="20px" />
       </SButton>

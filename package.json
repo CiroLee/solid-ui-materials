@@ -14,42 +14,41 @@
       "eslint --config .eslintrc.js"
     ],
     "*.{css,sass,scss}": [
-      "stylelint --fix",
-      "git add"
+      "stylelint --fix"
     ]
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^17.6.6",
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
-    "@unocss/preset-attributify": "^0.53.5",
-    "@unocss/transformer-variant-group": "^0.53.5",
+    "@commitlint/config-conventional": "^17.6.7",
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@typescript-eslint/parser": "^6.3.0",
+    "@unocss/preset-attributify": "^0.54.2",
+    "@unocss/transformer-variant-group": "^0.54.2",
     "autoprefixer": "^10.4.14",
-    "commitlint": "^17.6.6",
-    "eslint": "^8.45.0",
-    "eslint-config-prettier": "^8.8.0",
+    "commitlint": "^17.6.7",
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-solid": "^0.12.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
-    "prettier": "^3.0.0",
-    "sass": "^1.63.6",
-    "stylelint": "^15.10.1",
+    "prettier": "^3.0.1",
+    "sass": "^1.64.2",
+    "stylelint": "^15.10.2",
     "stylelint-config-standard": "^34.0.0",
     "stylelint-config-standard-scss": "^10.0.0",
     "stylelint-scss": "^5.0.1",
     "typescript": "^5.1.6",
-    "unocss": "^0.53.5",
-    "vite": "^4.4.4",
+    "unocss": "^0.54.2",
+    "vite": "^4.4.9",
     "vite-plugin-markdown": "^2.1.0",
     "vite-plugin-solid": "^2.7.0"
   },
   "dependencies": {
     "@solidjs/router": "^0.8.2",
-    "fe-gear": "^1.0.5",
+    "fe-gear": "^1.0.6",
     "highlight.js": "^11.8.0",
     "markdown-it": "^13.0.1",
-    "remixicon": "^3.4.0",
-    "solid-js": "^1.7.8"
+    "remixicon": "^3.5.0",
+    "solid-js": "^1.7.9"
   },
   "browserslist": [
     "last 2 versions",
