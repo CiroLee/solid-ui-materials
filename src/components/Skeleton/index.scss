@@ -2,7 +2,7 @@ $skeleton-flicker: linear-gradient(90deg, rgb(0 0 0 / 5%) 20%, rgb(0 0 0 / 10%) 
 $skeleton-shimmer: rgb(0 0 0 / 5%);
 $animate-duration: 2s;
 
-.s-SKeleton {
+.s-Skeleton {
   position: relative;
   &--flicker {
     background-image: $skeleton-flicker;

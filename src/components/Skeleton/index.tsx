@@ -5,7 +5,7 @@ interface SKeletonProps {
   style?: JSX.CSSProperties;
   type?: 'shimmer' | 'flicker';
 }
-const SKeleton: Component<SKeletonProps> = (props) => {
+const Skeleton: Component<SKeletonProps> = (props) => {
   const merged = mergeProps(
     {
       type: 'flicker',
@@ -16,10 +16,10 @@ const SKeleton: Component<SKeletonProps> = (props) => {
   );
   return (
     <div
-      class={`s-SKeleton  s-SKeleton--${merged.type} ${merged.class}`.replace(/\s{2,}/g, ' ').trim()}
+      class={`s-Skeleton  s-Skeleton--${merged.type} ${merged.class}`.replace(/\s{2,}/g, ' ').trim()}
       style={merged.style}
     />
   );
 };
 
-export default SKeleton;
+export default Skeleton;
