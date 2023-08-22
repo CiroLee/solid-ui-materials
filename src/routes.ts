@@ -83,7 +83,7 @@ const routes: RouteConfig[] = [
       },
       {
         path: 'SKeleton',
-        component: lazy(() => import('./pages/SKeleton-page')),
+        component: lazy(() => import('./pages/skeleton-page')),
         meta: {
           name: 'SKeleton',
           key: 'SKeleton',
