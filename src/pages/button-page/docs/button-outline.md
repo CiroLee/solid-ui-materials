@@ -1,21 +1,21 @@
 ```ts
 import { type Component } from 'solid-js';
-import SButton from 'your path';
+import Button from 'your path';
 const App: Component = () => {
   return (
     <div>
-      <SButton outline type="primary">
+      <Button outline type="primary">
         primary
-      </SButton>
-      <SButton outline type="success">
+      </Button>
+      <Button outline type="success">
         success
-      </SButton>
-      <SButton outline type="warn">
+      </Button>
+      <Button outline type="warn">
         warn
-      </SButton>
-      <SButton outline type="danger">
+      </Button>
+      <Button outline type="danger">
         danger
-      </SButton>
+      </Button>
     </div>
   );
 };

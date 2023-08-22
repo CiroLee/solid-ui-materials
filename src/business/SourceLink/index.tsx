@@ -1,5 +1,5 @@
 import { type Component } from 'solid-js';
-import SIcon from '@/components/SIcon';
+import Icon from '@/components/Icon';
 interface SourceLinkProps {
   path: string;
   name?: string;
@@ -14,7 +14,7 @@ const SourceLink: Component<SourceLinkProps> = (props) => {
       href={`https://github.com/CiroLee/solid-ui-materials/tree/main/src/components/${props.path}`}
       target="_blank">
       <span>{props.name || 'Source'}</span>
-      <SIcon name="external-link-line" />
+      <Icon name="external-link-line" />
     </a>
   );
 };

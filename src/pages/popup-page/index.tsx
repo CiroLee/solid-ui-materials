@@ -1,8 +1,8 @@
 import { createSignal } from 'solid-js';
-import SPopup, { type Placement } from '@/components/SPopup';
-import SSwitch from '@/components/SSwitch';
+import Popup, { type Placement } from '@/components/Popup';
+import Switch from '@/components/Switch';
 import SourceLink from '@/business/SourceLink';
-import SButton from '@/components/SButton';
+import Button from '@/components/Button';
 import CodeDrawer from '@/business/CodeDrawer';
 import CodeView from '@/business/CodeView';
 import { html as popupStr } from './docs/popup.md';
@@ -12,11 +12,11 @@ export default function PopupPage() {
   const tabs = [
     {
       name: 'index.tsx',
-      path: 'components/SPopup/index.tsx',
+      path: 'components/Popup/index.tsx',
     },
     {
       name: 'index.scss',
-      path: 'components/SPopup/index.scss',
+      path: 'components/Popup/index.scss',
     },
   ];
   const [showCodeDrawer, setShowCodeDrawer] = createSignal(false);
@@ -30,12 +30,12 @@ export default function PopupPage() {
   return (
     <>
       <div flex items-center justify-between>
-        <h3>SPopup</h3>
+        <h3>Popup</h3>
         <div>
           <span hover:text-blue-600 text-gray cursor-pointer mr-4 onClick={() => setShowCodeDrawer(true)}>
             code
           </span>
-          <SourceLink path="SPopup" name="source" />
+          <SourceLink path="Popup" name="source" />
         </div>
       </div>
       <p text-sub text-14px>
@@ -43,30 +43,30 @@ export default function PopupPage() {
         etc.
       </p>
       <div flex items-center mb-3>
-        <SSwitch checked={isBlur()} onChange={setIsBlur} />
+        <Switch checked={isBlur()} onChange={setIsBlur} />
         <span ml-3>isBlur: {isBlur() ? 'true' : 'false'}</span>
       </div>
       <div children:mr-3>
-        <SButton type="primary" onClick={() => openPopupBox('left')}>
+        <Button type="primary" onClick={() => openPopupBox('left')}>
           left
-        </SButton>
-        <SButton type="primary" onClick={() => openPopupBox('right')}>
+        </Button>
+        <Button type="primary" onClick={() => openPopupBox('right')}>
           right
-        </SButton>
-        <SButton type="primary" onClick={() => openPopupBox('top')}>
+        </Button>
+        <Button type="primary" onClick={() => openPopupBox('top')}>
           top
-        </SButton>
-        <SButton type="primary" onClick={() => openPopupBox('bottom')}>
+        </Button>
+        <Button type="primary" onClick={() => openPopupBox('bottom')}>
           bottom
-        </SButton>
-        <SButton type="primary" onClick={() => openPopupBox('center')}>
+        </Button>
+        <Button type="primary" onClick={() => openPopupBox('center')}>
           center
-        </SButton>
+        </Button>
       </div>
       <CodeView content={popupStr} />
-      <SPopup show={show()} maskClosable placement={placement()} isBlur={isBlur()} onCancel={() => setShow(false)}>
+      <Popup show={show()} maskClosable placement={placement()} isBlur={isBlur()} onCancel={() => setShow(false)}>
         <div class={`popup-box popup-box--${placement()}`}>popup content</div>
-      </SPopup>
+      </Popup>
       <CodeDrawer show={showCodeDrawer()} tabs={tabs} onCancel={() => setShowCodeDrawer(false)} />
     </>
   );

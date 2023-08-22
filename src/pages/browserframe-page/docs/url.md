@@ -1,10 +1,10 @@
 ```ts
 import { type Component } from 'solid-js';
-import SBrowserFrame from 'your path';
+import BrowserFrame from 'your path';
 const App: Component = () => {
   return (
     <div>
-      <SBrowserFrame type="macos" url="https://www.solidjs.com" />
+      <BrowserFrame type="macos" url="https://www.solidjs.com" />
     </div>
   );
 };

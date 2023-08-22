@@ -1,8 +1,8 @@
 ```ts
 import { type Component } from 'solid-js';
-import SRadio from 'your path';
+import Radio from 'your path';
 const App: Component = () => {
-  return <SRadio>Radio</SRadio>;
+  return <Radio>Radio</Radio>;
 };
 
 export default App;

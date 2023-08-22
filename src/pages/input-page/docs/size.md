@@ -1,12 +1,12 @@
 ```ts
 import { type Component } from 'solid-js';
-import SInput from 'your path';
+import Input from 'your path';
 const App: Component = () => {
   return (
     <div>
-      <SInput size="small" placeholder="small size" />
-      <SInput size="medium" placeholder="medium size" />
-      <SInput size="large" placeholder="large size" />
+      <Input size="small" placeholder="small size" />
+      <Input size="medium" placeholder="medium size" />
+      <Input size="large" placeholder="large size" />
     </div>
   );
 };

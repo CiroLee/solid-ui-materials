@@ -82,11 +82,11 @@ const routes: RouteConfig[] = [
         },
       },
       {
-        path: 'skeleton',
-        component: lazy(() => import('./pages/skeleton-page')),
+        path: 'SKeleton',
+        component: lazy(() => import('./pages/SKeleton-page')),
         meta: {
-          name: 'Skeleton',
-          key: 'skeleton',
+          name: 'SKeleton',
+          key: 'SKeleton',
           visible: true,
         },
       },

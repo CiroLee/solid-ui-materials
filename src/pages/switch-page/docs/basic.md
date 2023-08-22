@@ -1,6 +1,6 @@
 ```ts
 import { type Component, createSignal } from 'solid-js';
-import SSwitch from 'your path';
+import { default SSWitch } from 'your path';
 const App: Component = () => {
   const [on, setOn] = createSignal(false);
   return (

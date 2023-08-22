@@ -1,13 +1,13 @@
 ```ts
 import { type Component } from 'solid-js';
-import SRadio from 'your path';
+import Radio from 'your path';
 const App: Component = () => {
   return (
     <div>
-      <SRadio disabled>disabled</SRadio>
-      <SRadio disabled checked>
+      <Radio disabled>disabled</Radio>
+      <Radio disabled checked>
         disabled
-      </SRadio>
+      </Radio>
     </div>
   );
 };

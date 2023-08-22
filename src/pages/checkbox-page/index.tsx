@@ -1,5 +1,5 @@
 import { createSignal } from 'solid-js';
-import { SCheckbox, SCheckboxGroup, type SCheckboxGroupOptions } from '@/components/SCheckbox';
+import { Checkbox, CheckboxGroup, type CheckboxGroupOptions } from '@/components/Checkbox';
 import SourceLink from '@/business/SourceLink';
 import CodeDrawer from '@/business/CodeDrawer';
 import CodeView from '@/business/CodeView';
@@ -13,22 +13,22 @@ export default function CheckboxPage() {
   const tabs = [
     {
       name: 'checkbox.tsx',
-      path: 'components/SCheckbox/checkbox.tsx',
+      path: 'components/Checkbox/checkbox.tsx',
     },
     {
       name: 'group.tsx',
-      path: 'components/SCheckbox/group.tsx',
+      path: 'components/Checkbox/group.tsx',
     },
     {
       name: 'index.ts',
-      path: 'components/SCheckbox/index.ts',
+      path: 'components/Checkbox/index.ts',
     },
     {
       name: 'index.scss',
-      path: 'components/SCheckbox/index.scss',
+      path: 'components/Checkbox/index.scss',
     },
   ];
-  const checkboxGroup: SCheckboxGroupOptions[] = [
+  const checkboxGroup: CheckboxGroupOptions[] = [
     {
       children: 'apple',
       value: 'apple',
@@ -42,7 +42,7 @@ export default function CheckboxPage() {
       value: 'banana',
     },
   ];
-  const checkboxGroup2: SCheckboxGroupOptions[] = [
+  const checkboxGroup2: CheckboxGroupOptions[] = [
     {
       children: (
         <div>
@@ -89,30 +89,30 @@ export default function CheckboxPage() {
   return (
     <>
       <div flex items-center justify-between>
-        <h3>SCheckbox</h3>
+        <h3>Checkbox</h3>
         <div>
           <span hover:text-blue-600 text-gray cursor-pointer mr-4 onClick={() => setShowCodeDrawer(true)}>
             code
           </span>
-          <SourceLink path="SCheckbox" name="source" />
+          <SourceLink path="Checkbox" name="source" />
         </div>
       </div>
       <h4>basic</h4>
-      <SCheckbox onChange={(e) => console.log(e)}>checkbox</SCheckbox>
+      <Checkbox onChange={(e) => console.log(e)}>checkbox</Checkbox>
       <CodeView content={baseStr} />
       <h4>disabled</h4>
       <div class="children:mr-12px">
-        <SCheckbox disabled>disabled</SCheckbox>
-        <SCheckbox disabled checked>
+        <Checkbox disabled>disabled</Checkbox>
+        <Checkbox disabled checked>
           disabled
-        </SCheckbox>
+        </Checkbox>
       </div>
       <CodeView content={disabledStr} />
       <h4>checkbox group</h4>
-      <SCheckboxGroup value="apple" options={checkboxGroup} onChange={(list) => console.log(list)} />
+      <CheckboxGroup value="apple" options={checkboxGroup} onChange={(list) => console.log(list)} />
       <CodeView content={groupStr} />
       <h4>custom children</h4>
-      <SCheckboxGroup value="apple" options={checkboxGroup2} onChange={(list) => console.log(list)} />
+      <CheckboxGroup value="apple" options={checkboxGroup2} onChange={(list) => console.log(list)} />
       <CodeView content={customGroup} />
       <CodeDrawer show={showCodeDrawer()} tabs={tabs} onCancel={() => setShowCodeDrawer(false)} />
     </>

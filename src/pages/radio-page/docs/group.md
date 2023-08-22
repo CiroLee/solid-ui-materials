@@ -1,9 +1,9 @@
 ```ts
 import { type Component, createSignal } from 'solid-js';
-import SRadio, { type SRadioGroupOptions } from 'your path';
+import Radio, { type RadioGroupOptions } from 'your path';
 const App: Component = () => {
   const [groupValue, setGroupValue] = createSignal('apple');
-  const radioGroup: SRadioGroupOptions[] = [
+  const radioGroup: RadioGroupOptions[] = [
     {
       children: 'apple',
       value: 'apple',
@@ -17,7 +17,7 @@ const App: Component = () => {
       value: 'banana',
     },
   ];
-  return <SRadioGroup value={groupValue()} options={radioGroup} onChange={setGroupValue} />;
+  return <RadioGroup value={groupValue()} options={radioGroup} onChange={setGroupValue} />;
 };
 
 export default App;

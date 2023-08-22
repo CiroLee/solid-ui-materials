@@ -1,6 +1,6 @@
 import { createSignal } from 'solid-js';
-import STabs, { type STabItem } from '@/components/STabs';
-import SIcon from '@/components/SIcon';
+import Tabs, { type STabItem } from '@/components/Tabs';
+import Icon from '@/components/Icon';
 import SourceLink from '@/business/SourceLink';
 import CodeDrawer from '@/business/CodeDrawer';
 import CodeView from '@/business/CodeView';
@@ -11,11 +11,11 @@ export default function TabsPage() {
   const tabs = [
     {
       name: 'index.tsx',
-      path: 'components/STabs/index.tsx',
+      path: 'components/Tabs/index.tsx',
     },
     {
       name: 'index.scss',
-      path: 'components/STabs/index.scss',
+      path: 'components/Tabs/index.scss',
     },
   ];
   const tabs1: STabItem[] = [
@@ -52,7 +52,7 @@ export default function TabsPage() {
       key: 'windows',
       content: (
         <>
-          <SIcon name="windows-fill" />
+          <Icon name="windows-fill" />
           <span ml-1>window</span>
         </>
       ),
@@ -61,7 +61,7 @@ export default function TabsPage() {
       key: 'apple',
       content: (
         <>
-          <SIcon name="apple-fill" />
+          <Icon name="apple-fill" />
           <span ml-1>apple</span>
         </>
       ),
@@ -70,7 +70,7 @@ export default function TabsPage() {
       key: 'linux',
       content: (
         <>
-          <SIcon name="ubuntu-fill" />
+          <Icon name="ubuntu-fill" />
           <span ml-1>linux</span>
         </>
       ),
@@ -81,23 +81,23 @@ export default function TabsPage() {
     <>
       <div>
         <div flex items-center justify-between>
-          <h3>STabs</h3>
+          <h3>Tabs</h3>
           <div>
             <span hover:text-blue-600 text-gray cursor-pointer mr-4 onClick={() => setShowCodeDrawer(true)}>
               code
             </span>
-            <SourceLink path="STabs" name="source" />
+            <SourceLink path="Tabs" name="source" />
           </div>
         </div>
       </div>
       <h4>basic</h4>
-      <STabs defaultKey="apple" tabs={tabs1} class="w-260px" onChange={(key) => console.log('tab change: ', key)} />
+      <Tabs defaultKey="apple" tabs={tabs1} class="w-260px" onChange={(key) => console.log('tab change: ', key)} />
       <CodeView content={baseStr} />
       <h4>disabled</h4>
-      <STabs defaultKey="apple" tabs={tabs2} class="w-260px" />
+      <Tabs defaultKey="apple" tabs={tabs2} class="w-260px" />
       <CodeView content={disabledStr} />
       <h4>custom item</h4>
-      <STabs defaultKey="apple" tabs={tabs3} class="w-300px" />
+      <Tabs defaultKey="apple" tabs={tabs3} class="w-300px" />
       <CodeView content={customStr} />
       <CodeDrawer show={showCodeDrawer()} tabs={tabs} onCancel={() => setShowCodeDrawer(false)} />
     </>

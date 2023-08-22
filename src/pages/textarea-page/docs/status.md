@@ -1,13 +1,13 @@
 ```ts
 import { type Component } from 'solid-js';
-import STextarea from 'your path';
+import Textarea from 'your path';
 const App: Component = () => {
   return (
     <div>
-      <STextarea placeholder="warn" status="warn" />
-      <STextarea placeholder="error" status="error" />
-      <STextarea placeholder="disabled" disabled />
-      <STextarea placeholder="readonly" readonly value="readonly" />
+      <Textarea placeholder="warn" status="warn" />
+      <Textarea placeholder="error" status="error" />
+      <Textarea placeholder="disabled" disabled />
+      <Textarea placeholder="readonly" readonly value="readonly" />
     </div>
   );
 };

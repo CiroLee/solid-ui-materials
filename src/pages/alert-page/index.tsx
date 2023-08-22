@@ -1,7 +1,7 @@
 import { createSignal } from 'solid-js';
-import SAlert from '@/components/SAlert';
-import SIcon from '@/components/SIcon';
-import SButton from '@/components/SButton';
+import Alert from '@/components/Alert';
+import Icon from '@/components/Icon';
+import Button from '@/components/Button';
 import CodeDrawer from '@/business/CodeDrawer';
 import CodeView from '@/business/CodeView';
 import SourceLink from '@/business/SourceLink';
@@ -15,70 +15,70 @@ export default function AlertPage() {
   const tabs = [
     {
       name: 'index.tsx',
-      path: 'components/SAlert/index.tsx',
+      path: 'components/Alert/index.tsx',
     },
     {
       name: 'index.scss',
-      path: 'components/SAlert/index.scss',
+      path: 'components/Alert/index.scss',
     },
   ];
   const [showCodeDrawer, setShowCodeDrawer] = createSignal(false);
   return (
     <>
       <div flex items-center justify-between>
-        <h3>SAlert</h3>
+        <h3>Alert</h3>
         <div>
           <span hover:text-blue-600 text-gray cursor-pointer mr-4 onClick={() => setShowCodeDrawer(true)}>
             code
           </span>
-          <SourceLink path="SAlert" name="source" />
+          <SourceLink path="Alert" name="source" />
         </div>
       </div>
       <p text-sub>
         depend on{' '}
         <A class="text-blue-600" href="/components/icon">
-          SIcon
+          Icon
         </A>
       </p>
       <h4>basic</h4>
-      <SAlert type="info" description="information text" />
+      <Alert type="info" description="information text" />
       <CodeView content={baseStr} />
       <h4>type</h4>
       <div class="children:mb-3">
-        <SAlert type="info" description="information text" />
-        <SAlert type="success" description="success text" />
-        <SAlert type="warn" description="warn text" />
-        <SAlert type="error" description="error text" />
+        <Alert type="info" description="information text" />
+        <Alert type="success" description="success text" />
+        <Alert type="warn" description="warn text" />
+        <Alert type="error" description="error text" />
       </div>
       <CodeView content={typeStr} />
       <h4>with icon</h4>
       <div class="children:mb-3">
-        <SAlert showIcon type="info" title="notice title" description="information text, describe something you need" />
-        <SAlert showIcon type="success" title="success title" description="success text,describe something you need" />
-        <SAlert showIcon type="warn" title="warn title" description="warn text, describe something you need" />
-        <SAlert showIcon type="error" title="error title" description="error text, describe something you need" />
+        <Alert showIcon type="info" title="notice title" description="information text, describe something you need" />
+        <Alert showIcon type="success" title="success title" description="success text,describe something you need" />
+        <Alert showIcon type="warn" title="warn title" description="warn text, describe something you need" />
+        <Alert showIcon type="error" title="error title" description="error text, describe something you need" />
       </div>
       <CodeView content={widthIconStr} />
       <h4>custom</h4>
       <div class="children:mb-3">
-        <SAlert
+        <Alert
           showIcon
           title="custom action icon"
           description="system info, describe something you need"
-          action={<SIcon name="close-line" color="gray" />}
+          action={<Icon name="close-line" color="gray" />}
         />
-        <SAlert
+        <Alert
           showIcon
           type="success"
           title="custom action button"
           description="success text, describe something you need"
           action={
-            <SButton type="success" size="tiny" outline>
+            <Button type="success" size="tiny" outline>
               Done
-            </SButton>
+            </Button>
           }
         />
-        <SAlert
+        <Alert
           showIcon
           type="error"
           title="custom description"

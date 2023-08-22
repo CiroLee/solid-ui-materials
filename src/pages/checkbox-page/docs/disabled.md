@@ -1,13 +1,13 @@
 ```ts
 import { type Component } from 'solid-js';
-import SCheckbox from 'your path';
+import Checkbox from 'your path';
 const App: Component = () => {
   return (
     <div>
-      <SCheckbox disabled>disabled</SCheckbox>
-      <SCheckbox disabled checked>
+      <Checkbox disabled>disabled</Checkbox>
+      <Checkbox disabled checked>
         disabled
-      </SCheckbox>
+      </Checkbox>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { type Component } from 'solid-js';
 import style from './home.module.scss';
-import SIcon from '@/components/SIcon';
+import Icon from '@/components/Icon';
 import { A } from '@solidjs/router';
 const Home: Component = () => {
   return (
@@ -53,7 +53,7 @@ const Home: Component = () => {
         hover:text-blue-600"
         href="https://github.com/CiroLee/solid-ui-materials"
         target="_blank">
-        <SIcon name="github-fill" size="22px" class="mr-1" />
+        <Icon name="github-fill" size="22px" class="mr-1" />
         Github
       </A>
     </div>

@@ -1,9 +1,9 @@
 ```ts
 import { type Component, createSignal } from 'solid-js';
-import SRadio, { type SRadioGroupOptions } from 'your path';
+import Radio, { type RadioGroupOptions } from 'your path';
 const App: Component = () => {
   const [radioPhone, setRadioPhone] = createSignal('iphone');
-  const radioGroup: SRadioGroupOptions[] = [
+  const radioGroup: RadioGroupOptions[] = [
     {
       children: (
         <div>
@@ -46,7 +46,7 @@ const App: Component = () => {
       value: 'peach',
     },
   ];
-  return <SRadioGroup value={radioPhone()} options={radioGroup} onChange={setRadioPhone} />;
+  return <RadioGroup value={radioPhone()} options={radioGroup} onChange={setRadioPhone} />;
 };
 
 export default App;

@@ -1,7 +1,7 @@
 import { createSignal } from 'solid-js';
 import SourceLink from '@/business/SourceLink';
-import SIcon from '@/components/SIcon';
-import SButton from '@/components/SButton';
+import Icon from '@/components/Icon';
+import Button from '@/components/Button';
 import CodeView from '@/business/CodeView';
 import CodeDrawer from '@/business/CodeDrawer';
 import { html as buttonTypeStr } from './docs/button-type.md';
@@ -12,116 +12,116 @@ import { html as buttonBlockStr } from './docs/button-block.md';
 import { html as buttonGroupStr } from './docs/button-group.md';
 import { html as buttonIconStr } from './docs/button-icon.md';
 import './button-page.scss';
-export default function SButtonPage() {
+export default function ButtonPage() {
   const tabs = [
     {
       name: 'index.tsx',
-      path: 'components/SButton/index.tsx',
+      path: 'components/Button/index.tsx',
     },
     {
       name: 'index.scss',
-      path: 'components/SButton/index.scss',
+      path: 'components/Button/index.scss',
     },
   ];
   const [showCodeDrawer, setShowCodeDrawer] = createSignal(false);
   return (
     <>
       <div flex items-center justify-between>
-        <h3>SButton</h3>
+        <h3>Button</h3>
         <div>
           <span hover:text-blue-600 text-gray cursor-pointer mr-4 onClick={() => setShowCodeDrawer(true)}>
             code
           </span>
-          <SourceLink path="SButton" name="source" />
+          <SourceLink path="Button" name="source" />
         </div>
       </div>
       <h4>button type</h4>
       <div class="children:(mr-2 mb-2)">
-        <SButton type="primary">primary</SButton>
-        <SButton type="success">success</SButton>
-        <SButton type="warn">warn</SButton>
-        <SButton type="danger">danger</SButton>
-        <SButton type="text">text</SButton>
-        <SButton disabled>primary</SButton>
+        <Button type="primary">primary</Button>
+        <Button type="success">success</Button>
+        <Button type="warn">warn</Button>
+        <Button type="danger">danger</Button>
+        <Button type="text">text</Button>
+        <Button disabled>primary</Button>
       </div>
       <CodeView content={buttonTypeStr} />
       <h4>outline</h4>
       <div class="children:(mr-2 mb-2)">
-        <SButton outline type="primary">
+        <Button outline type="primary">
           primary
-        </SButton>
-        <SButton outline type="success">
+        </Button>
+        <Button outline type="success">
           success
-        </SButton>
-        <SButton outline type="warn">
+        </Button>
+        <Button outline type="warn">
           warn
-        </SButton>
-        <SButton outline type="danger">
+        </Button>
+        <Button outline type="danger">
           danger
-        </SButton>
+        </Button>
       </div>
       <CodeView content={outlineStr} />
       <h4>size</h4>
       <div class="flex items-center children:(mr-2 mb-2)">
-        <SButton size="tiny">tiny</SButton>
-        <SButton size="small">small</SButton>
-        <SButton size="medium">medium</SButton>
-        <SButton size="large">large</SButton>
+        <Button size="tiny">tiny</Button>
+        <Button size="small">small</Button>
+        <Button size="medium">medium</Button>
+        <Button size="large">large</Button>
       </div>
       <CodeView content={buttonSizeStr} />
       <h4>shape</h4>
       <div class="flex items-center children:(mr-2 mb-2)">
-        <SButton shape="default">default</SButton>
-        <SButton shape="round">round</SButton>
-        <SButton shape="circle">C</SButton>
-        <SButton shape="square">S</SButton>
+        <Button shape="default">default</Button>
+        <Button shape="round">round</Button>
+        <Button shape="circle">C</Button>
+        <Button shape="square">S</Button>
       </div>
       <CodeView content={buttonShapeStr} />
       <h4>block</h4>
       <div w-400px p-12px border border-solid border-gray-300 rounded children:mb-2>
-        <SButton outline block>
+        <Button outline block>
           block
-        </SButton>
-        <SButton block type="primary">
+        </Button>
+        <Button block type="primary">
           block
-        </SButton>
-        <SButton block shape="round" type="primary">
+        </Button>
+        <Button block shape="round" type="primary">
           block
-        </SButton>
+        </Button>
       </div>
       <CodeView content={buttonBlockStr} />
       <h4>usage - button group</h4>
       <div class="button-group">
-        <SButton type="primary">apple</SButton>
-        <SButton type="primary">pear</SButton>
-        <SButton type="primary">banana</SButton>
+        <Button type="primary">apple</Button>
+        <Button type="primary">pear</Button>
+        <Button type="primary">banana</Button>
       </div>
       <div class="button-group">
-        <SButton type="primary" shape="round">
+        <Button type="primary" shape="round">
           apple
-        </SButton>
-        <SButton type="primary" shape="round">
+        </Button>
+        <Button type="primary" shape="round">
           pear
-        </SButton>
-        <SButton type="primary" shape="round">
+        </Button>
+        <Button type="primary" shape="round">
           banana
-        </SButton>
+        </Button>
       </div>
       <CodeView content={buttonGroupStr} />
       <h4>usage - button with icon</h4>
       <div class="flex items-center children:(mr-2 mb-2)">
-        <SButton type="primary">
-          <SIcon name="add-circle-line" size="16px" />
+        <Button type="primary">
+          <Icon name="add-circle-line" size="16px" />
           <span style={{ 'padding-left': '4px' }}>Add</span>
-        </SButton>
-        <SButton type="primary">
+        </Button>
+        <Button type="primary">
           <span style={{ 'padding-right': '4px' }}>Add</span>
-          <SIcon name="add-circle-line" size="16px" />
-        </SButton>
-        <SButton type="primary" loading class="button-loading">
-          <SIcon name="loader-line" size="16px" />
+          <Icon name="add-circle-line" size="16px" />
+        </Button>
+        <Button type="primary" loading class="button-loading">
+          <Icon name="loader-line" size="16px" />
           <span style={{ 'padding-left': '4px' }}>loading</span>
-        </SButton>
+        </Button>
       </div>
       <CodeView content={buttonIconStr} />
       <CodeDrawer show={showCodeDrawer()} tabs={tabs} onCancel={() => setShowCodeDrawer(false)} />

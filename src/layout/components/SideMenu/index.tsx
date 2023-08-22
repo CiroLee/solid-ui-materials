@@ -1,5 +1,5 @@
 import { type Component, For, Show } from 'solid-js';
-import SIcon from '@/components/SIcon';
+import Icon from '@/components/Icon';
 import { A } from '@solidjs/router';
 import routes from '@/routes';
 interface SideMenuProps {
@@ -26,7 +26,7 @@ const SideMenu: Component<SideMenuProps> = (props) => {
             activeClass="text-inherit"
             inactiveClass="text-#b2b2b2">
             <Show when={menu?.meta?.icon}>
-              <SIcon name={menu.meta?.icon as string} class="mr-2" />
+              <Icon name={menu.meta?.icon as string} class="mr-2" />
             </Show>
             <span>{menu?.meta?.name}</span>
           </A>

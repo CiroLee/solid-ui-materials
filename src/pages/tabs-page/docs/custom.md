@@ -1,14 +1,14 @@
 ```ts
 import { type Component } from 'solid-js';
-import STabs from 'your path';
-import SIcon from 'your path';
+import Tabs from 'your path';
+import Icon from 'your path';
 const App: Component = () => {
   const tabs: STabItem[] = [
     {
       key: 'windows',
       content: (
         <>
-          <SIcon name="windows-fill" />
+          <Icon name="windows-fill" />
           <span style={{ 'margin-left': '8px' }}>window</span>
         </>
       ),
@@ -17,7 +17,7 @@ const App: Component = () => {
       key: 'apple',
       content: (
         <>
-          <SIcon name="apple-fill" />
+          <Icon name="apple-fill" />
           <span style={{ 'margin-left': '8px' }}>apple</span>
         </>
       ),
@@ -26,7 +26,7 @@ const App: Component = () => {
       key: 'linux',
       content: (
         <>
-          <SIcon name="ubuntu-fill" />
+          <Icon name="ubuntu-fill" />
           <span style={{ 'margin-left': '8px' }}>linux</span>
         </>
       ),
@@ -34,7 +34,7 @@ const App: Component = () => {
   ];
   return (
     <div>
-      <STabs defaultKey="apple" tabs={tabs} style={{ width: '300px' }} />
+      <Tabs defaultKey="apple" tabs={tabs} style={{ width: '300px' }} />
     </div>
   );
 };

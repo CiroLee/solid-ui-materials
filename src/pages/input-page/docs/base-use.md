@@ -1,12 +1,12 @@
 ```ts
 import { type Component, createSignal } from 'solid-js';
-import SInput from 'your path';
+import Input from 'your path';
 const App: Component = () => {
   const [value, setValue] = createSignal('');
   return (
     <div>
       <p>value: {value()}</p>
-      <SInput value={value()} placeholder="input sth..." onChange={setValue} />
+      <Input value={value()} placeholder="input sth..." onChange={setValue} />
     </div>
   );
 };

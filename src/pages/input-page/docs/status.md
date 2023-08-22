@@ -1,19 +1,19 @@
 ```ts
 import { type Component } from 'solid-js';
-import SInput from 'your path';
+import Input from 'your path';
 const App: Component = () => {
   return (
     <div>
-      <SInput status="warn" placeholder="warn" prefix={<SIcon name="shield-keyhole-line" />} />
-      <SInput status="error" placeholder="error" prefix={<SIcon name="shield-keyhole-line" />} />
-      <SInput
+      <Input status="warn" placeholder="warn" prefix={<Icon name="shield-keyhole-line" />} />
+      <Input status="error" placeholder="error" prefix={<Icon name="shield-keyhole-line" />} />
+      <Input
         disabled
         placeholder="disabled"
         status="error"
         value="disabled"
-        prefix={<SIcon name="shield-keyhole-line" color="#BABABA" />}
+        prefix={<Icon name="shield-keyhole-line" color="#BABABA" />}
       />
-      <SInput readonly value="readonly" />
+      <Input readonly value="readonly" />
     </div>
   );
 };

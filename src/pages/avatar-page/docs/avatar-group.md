@@ -1,13 +1,13 @@
 ```ts
 import { type Component } from 'solid-js';
-import SAvatar from 'your path';
+import Avatar from 'your path';
 const App: Component = () => {
   return (
     <div class="avatar-group">
-      <SAvatar src={avatarUrl} />
-      <SAvatar src={avatarUrl} />
-      <SAvatar src={avatarUrl} />
-      <SAvatar text="+3" />
+      <Avatar src={avatarUrl} />
+      <Avatar src={avatarUrl} />
+      <Avatar src={avatarUrl} />
+      <Avatar text="+3" />
     </div>
   );
 };

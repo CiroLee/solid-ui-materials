@@ -1,8 +1,8 @@
 ```ts
 import { type Component } from 'solid-js';
-import SRadio { type SCheckboxGroupOptions } from 'your path';
+import Radio { type CheckboxGroupOptions } from 'your path';
 const App: Component = () => {
-  const checkboxGroup: SCheckboxGroupOptions[] = [
+  const checkboxGroup: CheckboxGroupOptions[] = [
     {
       children: 'apple',
       value: 'apple',
@@ -16,7 +16,7 @@ const App: Component = () => {
       value: 'banana',
     },
   ];
-  return <SCheckboxGroup value="apple" options={checkboxGroup} onChange={(list) => console.log(list)} />;
+  return <CheckboxGroup value="apple" options={checkboxGroup} onChange={(list) => console.log(list)} />;
 };
 
 export default App;

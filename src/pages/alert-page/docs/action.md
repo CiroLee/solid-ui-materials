@@ -1,28 +1,28 @@
 ```ts
 import { type Component } from 'solid-js';
-import SAlert from 'your path';
-import SButton from 'your path';
+import Alert from 'your path';
+import Button from 'your path';
 const App: Component = () => {
   return (
     <div>
-      <SAlert
+      <Alert
         showIcon
         title="system info"
         description="system info, describe something you need"
-        action={<SIcon name="close-line" color="gray" />}
+        action={<Icon name="close-line" color="gray" />}
       />
-      <SAlert
+      <Alert
         showIcon
         type="success"
         title="success title"
         description="success text, describe something you need"
         action={
-          <SButton type="success" size="tiny" outline>
+          <Button type="success" size="tiny" outline>
             Done
-          </SButton>
+          </Button>
         }
       />
-      <SAlert
+      <Alert
         showIcon
         type="error"
         title="Error"

@@ -1,16 +1,16 @@
 ```ts
 import { type Component } from 'solid-js';
-import SAvatar from 'your path';
+import Avatar from 'your path';
 const App: Component = () => {
   return (
     <div>
       <div class="avatar-status online" style={{ width: '40px', height: '40px' }}>
         <div class="dot dot--online" />
-        <SAvatar shape="circle" src={avatarUrl} />
+        <Avatar shape="circle" src={avatarUrl} />
       </div>
       <div class="avatar-status offline" style={{ width: '40px', height: '40px' }}>
         <div class="dot dot--online" />
-        <SAvatar shape="circle" src={avatarUrl} />
+        <Avatar shape="circle" src={avatarUrl} />
       </div>
     </div>
   );

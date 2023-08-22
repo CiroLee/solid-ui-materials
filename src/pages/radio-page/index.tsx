@@ -1,5 +1,5 @@
 import { createSignal } from 'solid-js';
-import { type SRadioGroupOptions, SRadio, SRadioGroup } from '@/components/SRadio';
+import { type RadioGroupOptions, Radio, RadioGroup } from '@/components/Radio';
 import SourceLink from '@/business/SourceLink';
 import CodeDrawer from '@/business/CodeDrawer';
 import CodeView from '@/business/CodeView';
@@ -12,25 +12,25 @@ export default function RadioPage() {
   const tabs = [
     {
       name: 'radio.tsx',
-      path: 'components/SRadio/radio.tsx',
+      path: 'components/Radio/radio.tsx',
     },
     {
       name: 'group.tsx',
-      path: 'components/SRadio/group.tsx',
+      path: 'components/Radio/group.tsx',
     },
     {
       name: 'index.ts',
-      path: 'components/SRadio/index.ts',
+      path: 'components/Radio/index.ts',
     },
     {
       name: 'index.scss',
-      path: 'components/SRadio/index.scss',
+      path: 'components/Radio/index.scss',
     },
   ];
   const [showCodeDrawer, setShowCodeDrawer] = createSignal(false);
   const [groupValue, setGroupValue] = createSignal('apple');
   const [radioPhone, setRadioPhone] = createSignal('iphone');
-  const radioGroup: SRadioGroupOptions[] = [
+  const radioGroup: RadioGroupOptions[] = [
     {
       children: 'apple',
       value: 'apple',
@@ -44,7 +44,7 @@ export default function RadioPage() {
       value: 'banana',
     },
   ];
-  const radioGroup2: SRadioGroupOptions[] = [
+  const radioGroup2: RadioGroupOptions[] = [
     {
       children: (
         <div>
@@ -90,30 +90,30 @@ export default function RadioPage() {
   return (
     <>
       <div flex items-center justify-between>
-        <h3>SRadio</h3>
+        <h3>Radio</h3>
         <div>
           <span hover:text-blue-600 text-gray cursor-pointer mr-4 onClick={() => setShowCodeDrawer(true)}>
             code
           </span>
-          <SourceLink path="SRadio" name="source" />
+          <SourceLink path="Radio" name="source" />
         </div>
       </div>
       <h4>basic</h4>
-      <SRadio>Radio</SRadio>
+      <Radio>Radio</Radio>
       <CodeView content={baseStr} />
       <h4>disabled</h4>
       <div class="children:mr-3">
-        <SRadio disabled>disabled</SRadio>
-        <SRadio disabled checked>
+        <Radio disabled>disabled</Radio>
+        <Radio disabled checked>
           disabled
-        </SRadio>
+        </Radio>
         <CodeView content={disabledStr} />
       </div>
       <h4>radio group</h4>
-      <SRadioGroup value={groupValue()} options={radioGroup} onChange={setGroupValue} />
+      <RadioGroup value={groupValue()} options={radioGroup} onChange={setGroupValue} />
       <CodeView content={groupStr} />
       <h4>radio group(custom radio children)</h4>
-      <SRadioGroup value={radioPhone()} options={radioGroup2} onChange={setRadioPhone} />
+      <RadioGroup value={radioPhone()} options={radioGroup2} onChange={setRadioPhone} />
       <CodeView content={customGroup} />
       <CodeDrawer show={showCodeDrawer()} tabs={tabs} onCancel={() => setShowCodeDrawer(false)} />
     </>

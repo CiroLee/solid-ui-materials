@@ -1,6 +1,6 @@
 import { type Component, For, createResource, createEffect, createSignal } from 'solid-js';
-import SPopup from '@/components/SPopup';
-import SIcon from '@/components/SIcon';
+import Popup from '@/components/Popup';
+import Icon from '@/components/Icon';
 import { copyToClipboard } from '@/utils/utils';
 import { fetchCodesFromGithub, type GithubContent } from '@/api/github';
 type Tab = { name: string; path: string };
@@ -42,7 +42,7 @@ const CodeDrawer: Component<CodeDrawerProps> = (props) => {
   });
 
   return (
-    <SPopup show={props.show} maskClosable placement="right" onCancel={props.onCancel}>
+    <Popup show={props.show} maskClosable placement="right" onCancel={props.onCancel}>
       <div flex flex-col w-540px h-full bg-white p-12px overflow-hidden box-border>
         <div flex>
           <For each={codeData()}>
@@ -76,14 +76,14 @@ const CodeDrawer: Component<CodeDrawerProps> = (props) => {
             transition-all
             class="hover:(bg-gray/40)"
             onClick={() => handleCopy(code())}>
-            <SIcon name={isCopied() ? 'check-line' : 'clipboard-line'} size="18px" />
+            <Icon name={isCopied() ? 'check-line' : 'clipboard-line'} size="18px" />
           </div>
           <pre>
             <code>{code()}</code>
           </pre>
         </div>
       </div>
-    </SPopup>
+    </Popup>
   );
 };
 

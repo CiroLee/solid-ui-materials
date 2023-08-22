@@ -1,10 +1,10 @@
 ```ts
 import { type Component } from 'solid-js';
-import STextarea from 'your path';
+import Textarea from 'your path';
 const App: Component = () => {
   return (
     <div>
-      <STextarea value={value()} placeholder="input sth" />
+      <Textarea value={value()} placeholder="input sth" />
     </div>
   );
 };

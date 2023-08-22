@@ -1,6 +1,6 @@
 /* eslint-disable solid/no-innerhtml */
 import { type Component, onMount, createSignal, Show } from 'solid-js';
-import SButton from '@/components/SButton';
+import Button from '@/components/Button';
 import style from './code-view.module.scss';
 import 'highlight.js/styles/atom-one-dark.css';
 interface CodeViewProps {
@@ -29,9 +29,9 @@ const CodeView: Component<CodeViewProps> = (props) => {
       <div ref={ref} class={style['code-view']} innerHTML={props.content} />
       <Show when={showExpand()}>
         <div absolute bottom-0 flex flex-center w-full h-60px bg-gradient-to-b from-transparent to-gray-800>
-          <SButton class="" size="tiny" onClick={() => setExpandToggle(!expandToggle())}>
+          <Button class="" size="tiny" onClick={() => setExpandToggle(!expandToggle())}>
             {expandToggle() ? 'collapse' : 'expand'}
-          </SButton>
+          </Button>
         </div>
       </Show>
     </div>

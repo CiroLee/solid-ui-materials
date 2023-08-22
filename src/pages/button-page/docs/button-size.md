@@ -1,13 +1,13 @@
 ```ts
 import { type Component } from 'solid-js';
-import SButton from 'your path';
+import Button from 'your path';
 const App: Component = () => {
   return (
     <div>
-      <SButton size="tiny">tiny</SButton>
-      <SButton size="small">small</SButton>
-      <SButton size="medium">medium</SButton>
-      <SButton size="large">large</SButton>
+      <Button size="tiny">tiny</Button>
+      <Button size="small">small</Button>
+      <Button size="medium">medium</Button>
+      <Button size="large">large</Button>
     </div>
   );
 };

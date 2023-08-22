@@ -1,8 +1,8 @@
 ```ts
 import { type Component } from 'solid-js';
-import SCheckbox from 'your path';
+import Checkbox from 'your path';
 const App: Component = () => {
-  return <SCheckbox onChange={(e) => console.log(e)}>checkbox</SCheckbox>;
+  return <Checkbox onChange={(e) => console.log(e)}>checkbox</Checkbox>;
 };
 
 export default App;

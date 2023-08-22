@@ -1,15 +1,15 @@
 ```ts
 import { type Component } from 'solid-js';
-import SInput from 'your path';
+import Input from 'your path';
 const App: Component = () => {
   return (
     <div>
-      <SInput placeholder="prefix icon" prefix={<SIcon name="user-line" color="gray" />} />
-      <SInput placeholder="suffix icon" suffix={<SIcon name="search-line" color="gray" />} />
-      <SInput
+      <Input placeholder="prefix icon" prefix={<Icon name="user-line" color="gray" />} />
+      <Input placeholder="suffix icon" suffix={<Icon name="search-line" color="gray" />} />
+      <Input
         placeholder="suffix icon"
-        prefix={<SIcon name="money-cny-box-line" color="gray" />}
-        suffix={<SIcon name="information-line" color="#b9b5b5" title="information" />}
+        prefix={<Icon name="money-cny-box-line" color="gray" />}
+        suffix={<Icon name="information-line" color="#b9b5b5" title="information" />}
       />
     </div>
   );

@@ -1,24 +1,24 @@
 ```ts
 import { type Component } from 'solid-js';
-import SButton from 'your path';
+import Button from 'your path';
 const App: Component = () => {
   return (
     <div>
       <div class="button-group">
-        <SButton type="primary">apple</SButton>
-        <SButton type="primary">pear</SButton>
-        <SButton type="primary">banana</SButton>
+        <Button type="primary">apple</Button>
+        <Button type="primary">pear</Button>
+        <Button type="primary">banana</Button>
       </div>
       <div class="button-group">
-        <SButton type="primary" round>
+        <Button type="primary" round>
           apple
-        </SButton>
-        <SButton type="primary" round>
+        </Button>
+        <Button type="primary" round>
           pear
-        </SButton>
-        <SButton type="primary" round>
+        </Button>
+        <Button type="primary" round>
           banana
-        </SButton>
+        </Button>
       </div>
     </div>
   );

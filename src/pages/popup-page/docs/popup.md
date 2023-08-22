@@ -1,8 +1,8 @@
 ```ts
 import { type Component, createSignal } from 'solid-js';
-import SButton from 'your path';
-import SPopup from 'your path';
-import SSwitch from 'your path';
+import Button from 'your path';
+import Popup from 'your path';
+import Switch from 'your path';
 const App: Component = () => {
   const [show, setShow] = createSignal(false);
   const [placement, setPlacement] = createSignal<Placement>('left');
@@ -13,28 +13,28 @@ const App: Component = () => {
   return (
     <>
       <div>
-        <SSwitch checked={isBlur()} onChange={setIsBlur} />
+        <Switch checked={isBlur()} onChange={setIsBlur} />
         <span>isBlur: {isBlur() ? 'true' : 'false'}</span>
       </div>
       <div>
-        <SButton type="primary" onClick={() => openPopupBox('left')}>
+        <Button type="primary" onClick={() => openPopupBox('left')}>
           left
-        </SButton>
-        <SButton type="primary" onClick={() => openPopupBox('right')}>
+        </Button>
+        <Button type="primary" onClick={() => openPopupBox('right')}>
           right
-        </SButton>
-        <SButton type="primary" onClick={() => openPopupBox('top')}>
+        </Button>
+        <Button type="primary" onClick={() => openPopupBox('top')}>
           top
-        </SButton>
-        <SButton type="primary" onClick={() => openPopupBox('bottom')}>
+        </Button>
+        <Button type="primary" onClick={() => openPopupBox('bottom')}>
           bottom
-        </SButton>
-        <SButton type="primary" onClick={() => openPopupBox('center')}>
+        </Button>
+        <Button type="primary" onClick={() => openPopupBox('center')}>
           center
-        </SButton>
-        <SPopup show={show()} maskClosable placement={placement()} isBlur={isBlur()} onCancel={() => setShow(false)}>
+        </Button>
+        <Popup show={show()} maskClosable placement={placement()} isBlur={isBlur()} onCancel={() => setShow(false)}>
           <div class={`popup-box popup-box--${placement()}`}>popup content</div>
-        </SPopup>
+        </Popup>
       </div>
     </>
   );
