@@ -3,6 +3,7 @@ import Popup from '@/components/Popup';
 import Icon from '@/components/Icon';
 import { copyToClipboard } from '@/utils/utils';
 import { fetchCodesFromGithub, type GithubContent } from '@/api/github';
+import { Base64 } from 'js-base64';
 type Tab = { name: string; path: string };
 interface CodeDrawerProps {
   show: boolean;
@@ -38,7 +39,8 @@ const CodeDrawer: Component<CodeDrawerProps> = (props) => {
     setActiveKey(codeData()?.[0].name || '');
   });
   createEffect(() => {
-    setCode(window.atob(codeData()?.find((item) => item.name === activeKey())?.code || ''));
+    const result = codeData()?.find((item) => item.name === activeKey())?.code || '';
+    setCode(Base64.decode(result));
   });
 
   return (
