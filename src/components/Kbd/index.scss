@@ -1,0 +1,23 @@
+$height: 28px;
+$padding-x: 8px;
+$border-radius: 4px;
+$bg: #fafafa;
+$border-color: #e8e7e7;
+
+.s-kbd {
+  display: inline-flex;
+  align-items: center;
+  height: $height;
+  font-size: 14px;
+  padding: 0 $padding-x;
+  border-radius: $border-radius;
+  border: 1px solid $border-color;
+  box-sizing: border-box;
+  color: #333;
+  background-color: $bg;
+  &__item {
+    &:not(:first-child) {
+      margin-left: 6px;
+    }
+  }
+}

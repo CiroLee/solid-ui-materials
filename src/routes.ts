@@ -144,6 +144,15 @@ const routes: RouteConfig[] = [
           visible: true,
         },
       },
+      {
+        path: 'kbd',
+        component: lazy(() => import('./pages/kbd-page')),
+        meta: {
+          name: 'Kbd',
+          key: 'kbd',
+          visible: true,
+        },
+      },
     ],
   },
 
